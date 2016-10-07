@@ -1,5 +1,4 @@
 #transform_board {
-  width: 100%;
   height: 500px;
   background: white;
   position: relative; }
@@ -7,11 +6,7 @@
 #show_body {
   position: relative; }
   #show_body #russiablock {
-    position: absolute;
-    width: 500px;
-    height: 1000px;
-    left: 0px;
-    top: 0px; }
+    height: 1000px; }
     #show_body #russiablock .blockpiece {
       position: absolute;
       transition: linear 0.3s;
@@ -24,12 +19,8 @@
       margin-left: 14px;
       margin-top: 10px; }
   #show_body #resumeBody {
-    position: absolute;
     background: gray;
-    width: 900px;
     height: 1000px;
-    left: 500px;
-    top: 0px;
     z-index: 0; }
     #show_body #resumeBody .resume {
       position: absolute;
@@ -40,8 +31,8 @@
       left: 100px;
       top: 150px; }
     #show_body #resumeBody #word2 {
-      font-size: 54px;
-      left: 400px;
+      font-size: 44px;
+      left: 300px;
       top: 250px; }
     #show_body #resumeBody #word3 {
       font-size: 42px;
@@ -103,40 +94,54 @@
       transform: rotate(45deg);
       transform-origin: 100% 100%; }
   #show_body #mobile {
-    position: absolute;
-    width: 500px;
-    height: 1000px;
-    left: 1400px;
-    top: 0px; }
+    height: 1000px; }
     #show_body #mobile .container {
       perspective: 800px;
       -webkit-perspective: 800px;
+      -moz-perspective: 800px;
+      -ms-perspective: 800px;
+      -o-perspective: 800px;
       position: relative;
       margin: 0 auto;
-      width: 500px;
+      width: 450px;
       height: 1000px; }
     #show_body #mobile .iphone-front, #show_body #mobile .iphone-back {
       transform-style: preserve-3d;
       -webkit-transform-style: preserve-3d;
-      backface-visibility: hidden !important;
-      -webkit-backface-visibility: hidden !important;
+      -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+      -o-transform-style: preserve-3d;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
       width: 380px;
       height: 800px;
       position: absolute;
-      top: 150px;
-      left: 75px;
+      top: 130px;
+      left: 50px;
       background: url(images/iphone.png) no-repeat right center;
       transition: 0.8s; }
     #show_body #mobile .iphone-front {
       transform: rotateY(180deg);
       -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
       background-position: left center; }
     #show_body #mobile .container:hover .iphone-back {
       transform: rotateY(180deg);
-      -webkit-transform: rotateY(180deg); }
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg); }
     #show_body #mobile .container:hover .iphone-front {
       transform: rotateY(360deg);
-      -webkit-transform: rotateY(360deg); }
+      -webkit-transform: rotateY(360deg);
+      -moz-transform: rotateY(360deg);
+      -ms-transform: rotateY(360deg);
+      -o-transform: rotateY(360deg); }
     #show_body #mobile .outer-container {
       position: absolute;
       top: 118px;

@@ -70,7 +70,7 @@ window.onload=function(){
   
   //generate cihai pixel image
   function cihai(){
-      var customX=500;
+      var customX=window.innerWidth/10;
       var customY=160;
 
       //print out "C"
@@ -98,80 +98,80 @@ window.onload=function(){
      //print out first "I"
      for(var iy=0;iy<8;iy++){
         shuffleArr[iy+12].style.top=customY+iy*20+"px";
-        shuffleArr[iy+12].style.left=customX+200+"px";
+        shuffleArr[iy+12].style.left=customX+150+"px";
      }
 
      //print out "H"
     for(var hy=0;hy<8;hy++){
         shuffleArr[hy+20].style.top=customY+hy*20+"px";
-        shuffleArr[hy+20].style.left=customX+350+"px";
+        shuffleArr[hy+20].style.left=customX+250+"px";
      }
 
     for(var hx=0;hx<4;hx++){
         shuffleArr[hx+28].style.top=customY+70+"px";
-        shuffleArr[hx+28].style.left=customX+370+hx*20+"px";
+        shuffleArr[hx+28].style.left=customX+270+hx*20+"px";
      }
 
     for(var hy=0;hy<8;hy++){
         shuffleArr[hy+32].style.top=customY+hy*20+"px";
-        shuffleArr[hy+32].style.left=customX+450+"px";
+        shuffleArr[hy+32].style.left=customX+350+"px";
      }
 
      //print out "A"
      shuffleArr[40].style.top=customY+"px";
-     shuffleArr[40].style.left=customX+650+"px";
+     shuffleArr[40].style.left=customX+500+"px";
 
      shuffleArr[41].style.top=customY+20+"px";
-     shuffleArr[41].style.left=customX+640+"px";
+     shuffleArr[41].style.left=customX+490+"px";
 
      shuffleArr[42].style.top=customY+20+"px";
-     shuffleArr[42].style.left=customX+660+"px";
+     shuffleArr[42].style.left=customX+510+"px";
 
      shuffleArr[43].style.top=customY+40+"px";
-     shuffleArr[43].style.left=customX+630+"px";
+     shuffleArr[43].style.left=customX+480+"px";
 
      shuffleArr[44].style.top=customY+40+"px";
-     shuffleArr[44].style.left=customX+670+"px";
+     shuffleArr[44].style.left=customX+520+"px";
 
      shuffleArr[45].style.top=customY+60+"px";
-     shuffleArr[45].style.left=customX+620+"px";
+     shuffleArr[45].style.left=customX+470+"px";
 
      shuffleArr[46].style.top=customY+60+"px";
-     shuffleArr[46].style.left=customX+680+"px";
+     shuffleArr[46].style.left=customX+530+"px";
 
      shuffleArr[47].style.top=customY+80+"px";
-     shuffleArr[47].style.left=customX+610+"px";
+     shuffleArr[47].style.left=customX+460+"px";
 
      shuffleArr[48].style.top=customY+80+"px";
-     shuffleArr[48].style.left=customX+690+"px";
+     shuffleArr[48].style.left=customX+540+"px";
 
      for(var ax=0;ax<6;ax++){
         shuffleArr[ax+49].style.top=customY+100+"px";
-        shuffleArr[ax+49].style.left=customX+600+ax*20+"px";
+        shuffleArr[ax+49].style.left=customX+450+ax*20+"px";
      }
 
      shuffleArr[55].style.top=customY+120+"px";
-     shuffleArr[55].style.left=customX+590+"px";
+     shuffleArr[55].style.left=customX+440+"px";
 
      shuffleArr[56].style.top=customY+120+"px";
-     shuffleArr[56].style.left=customX+710+"px";
+     shuffleArr[56].style.left=customX+560+"px";
 
      shuffleArr[57].style.top=customY+140+"px";
-     shuffleArr[57].style.left=customX+580+"px";
+     shuffleArr[57].style.left=customX+430+"px";
 
      shuffleArr[58].style.top=customY+140+"px";
-     shuffleArr[58].style.left=customX+720+"px";
+     shuffleArr[58].style.left=customX+570+"px";
 
      //print out second "I";
      for(var iy=0;iy<8;iy++){
         shuffleArr[iy+59].style.top=customY+iy*20+"px";
-        shuffleArr[iy+59].style.left=customX+850+"px";
+        shuffleArr[iy+59].style.left=customX+650+"px";
      }
   }
   
   //generate smile face image
   function smileFace(){
-      var customX=800;
+      var customX=200+window.innerWidth/10;
       var customY=70;
       
       for(var sx=0;sx<11;sx++){
@@ -241,10 +241,17 @@ window.onload=function(){
 
   //record click event coordinate and move the overlap
   resume.onclick=function(e){
-     var scrollY=document.body.scrollTop;
-     var clickX=e.clientX-russiablock.clientWidth;
-     var clickY=e.clientY-transformBoard.clientHeight+scrollY;
+     e=e||window.event;
+     var scrollY= (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+     if(window.innerWidth>800){
+        var clickX=e.clientX-russiablock.clientWidth;
+        var clickY=e.clientY-transformBoard.clientHeight+scrollY;
+     }else{
+        var clickX=e.clientX;
+        var clickY=e.clientY-transformBoard.clientHeight-russiablock.clientHeight+scrollY;
+     }
      var overlapRadius=overlap.clientWidth/2;
+     console.log(clickX+" "+clickY);
 
      if(clickX<overlapRadius){
        clickX=overlapRadius;
@@ -294,7 +301,7 @@ window.onload=function(){
         block1child_PArr[i].className="textpiece";
       }
 
-      var randomLeft=80+Math.ceil(Math.random()*260);
+      var randomLeft=80+Math.ceil(Math.random()*200);
       var randomShape=Math.ceil(Math.random()*4);
 
       //different shape
@@ -555,7 +562,7 @@ window.onload=function(){
         blockchild_PArr[i].className="textpiece";
       }
 
-      var randomLeft=Math.ceil(Math.random()*300);
+      var randomLeft=Math.ceil(Math.random()*240);
       var blockdisappear=0;
 
       if(length%3==0){
