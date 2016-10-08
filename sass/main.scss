@@ -37,8 +37,9 @@
 	    	z-index:10;
 	    }
 	    #word1{
-            font-size:36px;
-            left:100px;
+	    	width:300px;
+            font-size:32px;
+            left:20px;
             top:150px;
 	    }
 	    #word2{
@@ -193,6 +194,7 @@
 			overflow-y:scroll;
 		}
 		#content{
+			position:relative;
 			width:320px;
 			height:567px;
 		}
@@ -269,6 +271,11 @@
 			top:940px;
 			width:470px;
 			height:40px;
+		}
+		#minionsApp{
+			position:absolute;
+			width:0px;
+			height:0px;
 		}
 	}
 }

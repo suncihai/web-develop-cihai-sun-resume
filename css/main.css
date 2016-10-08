@@ -30,8 +30,9 @@
       color: gray;
       z-index: 10; }
     #show_body #resumeBody #word1 {
-      font-size: 36px;
-      left: 100px;
+      width: 300px;
+      font-size: 32px;
+      left: 20px;
       top: 150px; }
     #show_body #resumeBody #word2 {
       font-size: 44px;
@@ -159,6 +160,7 @@
       overflow-x: hidden;
       overflow-y: scroll; }
     #show_body #mobile #content {
+      position: relative;
       width: 320px;
       height: 567px; }
     #show_body #mobile .news {
@@ -224,5 +226,9 @@
       top: 940px;
       width: 470px;
       height: 40px; }
+    #show_body #mobile #minionsApp {
+      position: absolute;
+      width: 0px;
+      height: 0px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -9,6 +9,8 @@ window.onload=function(){
   var content=document.getElementById('content');
   var news=document.getElementsByClassName('news');
   var inner_container=document.getElementById('inner-container');
+  var newsApp=document.getElementById('newsApp');
+  var minionsApp=document.getElementById('minionsApp');
   var closeApp=false;
   var PixelChange=false;
 
@@ -708,15 +710,18 @@ window.onload=function(){
 
   RandomBlock();
 
+  //iphone apps
   news[0].style.transition="ease 1s";
   news[1].style.transition="ease 1s";
   news[2].style.transition="ease 1s";
+  minionsApp.style.transition="ease 1s";
 
   homebtn.onclick=function(){
     closeApp=true;
+    minionsApp.style.transition="ease 1s";
     for(var i=0;i<news.length;i++){
       news[i].style.width="0px";
-      news[i].style.top="0px";
+      news[i].style.height="0px";
       news[i].style.background="";
       news[i].innerText="";
     }
@@ -726,7 +731,7 @@ window.onload=function(){
       news[0].style.height="70px";
       news[0].style.marginLeft="10px";
       news[0].style.marginTop="20px";
-      news[0].style.background="url(images/icon.png)"
+      news[0].style.background="url(images/news_icon.png)"
       news[1].style.width="0px";
       news[1].style.height="0px";
       news[1].style.marginLeft="40px";
@@ -735,11 +740,17 @@ window.onload=function(){
       news[2].style.height="0px";
       news[2].style.marginLeft="40px";
       news[2].style.marginTop="0px";
+      minionsApp.style.width="70px";
+      minionsApp.style.height="70px";
+      minionsApp.style.left="90px";
+      minionsApp.style.top="0px";
+      minionsApp.style.background="url(images/minions_icon.png)";
     },100);
   }
 
   news[0].onclick=function(){
     if(closeApp){
+      minionsApp.style.transition="0s";
       setTimeout(function(){
         news[0].innerText="Movie";
         news[0].style.width="320px";
@@ -759,13 +770,15 @@ window.onload=function(){
         news[2].style.marginLeft="0px";
         news[2].style.marginTop="0px";
         news[2].style.background="url(css/images/shopping.gif)";
+        minionsApp.style.width="0px";
+        minionsApp.style.height="0px";
         inner_container.style.overflowY="scroll";
       },100);
 
       setTimeout(function(){
           for(var i=3;i<news.length;i++){
             news[i].style.width="320px";
-            news[i].style.top="200px";
+            news[i].style.height="200px";
           }
           news[3].innerText="Stars";
           news[4].innerText="Sports";
