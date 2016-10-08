@@ -243,7 +243,7 @@ window.onload=function(){
   resume.onclick=function(e){
      e=e||window.event;
      var scrollY= (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-     if(window.innerWidth>800){
+     if(window.innerWidth>1000){
         var clickX=e.clientX-russiablock.clientWidth;
         var clickY=e.clientY-transformBoard.clientHeight+scrollY;
      }else{
@@ -251,6 +251,7 @@ window.onload=function(){
         var clickY=e.clientY-transformBoard.clientHeight-russiablock.clientHeight+scrollY;
      }
      var overlapRadius=overlap.clientWidth/2;
+     console.log(window.innerWidth);
      console.log(clickX+" "+clickY);
 
      if(clickX<overlapRadius){
@@ -265,7 +266,7 @@ window.onload=function(){
        clickY=resume.clientHeight-overlapRadius;
      }
      
-     if(clickX>400&&clickX<500&&clickY>730){
+     if(clickX>400&&clickX<500&&clickY>700){
        setTimeout(function(){
          heart.className="heartShow";
        },500);
@@ -378,6 +379,12 @@ window.onload=function(){
            block1child_PArr[1].innerText="U";
            block1child_PArr[2].innerText="L";
            block1child_PArr[3].innerText="P";
+           break;
+        case "JAVA":
+           block1child_PArr[0].innerText="J";
+           block1child_PArr[1].innerText="A";
+           block1child_PArr[2].innerText="V";
+           block1child_PArr[3].innerText="A";
            break;
         default:
            break;
@@ -678,7 +685,7 @@ window.onload=function(){
       blockfall();
   }
   
-  var SkillArr=["HTML","CSS","JAVASCRIPT","AJAX","JQUERY","OBJECTIVEC","GULP","BOOTSTRAP","SASS","ANGULARJS"];
+  var SkillArr=["HTML","CSS","JAVASCRIPT","AJAX","JQUERY","OBJECTIVEC","JAVA","GULP","BOOTSTRAP","SASS","ANGULARJS"];
   var round=0;
 
   function RandomBlock(){
@@ -688,7 +695,7 @@ window.onload=function(){
        othertileblock(SkillArr[round],SkillArr[round].length);
     }
     round++;
-    if(round==10){
+    if(round==11){
        round=0;
     }
     setTimeout(RandomBlock,5000);

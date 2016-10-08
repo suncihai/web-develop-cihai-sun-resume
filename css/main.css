@@ -7,6 +7,9 @@
   position: relative; }
   #show_body #russiablock {
     height: 1000px; }
+    #show_body #russiablock #russiablock_des {
+      text-align: center;
+      font-size: 20px; }
     #show_body #russiablock .blockpiece {
       position: absolute;
       transition: linear 0.3s;
