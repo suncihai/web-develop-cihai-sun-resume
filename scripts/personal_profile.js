@@ -5,6 +5,11 @@ window.onload=function(){
   var russiablock=document.getElementById('russiablock');
   var resume=document.getElementById('resumeBody');
   var heart=document.getElementById('heart');
+  var homebtn=document.getElementById('homebtn');
+  var content=document.getElementById('content');
+  var news=document.getElementsByClassName('news');
+  var inner_container=document.getElementById('inner-container');
+  var closeApp=false;
   var PixelChange=false;
 
   transformBoard.style.transition="ease 3s";
@@ -702,4 +707,54 @@ window.onload=function(){
   }
 
   RandomBlock();
+
+  news[0].style.transition="ease 1s";
+
+  homebtn.onclick=function(){
+    closeApp=true;
+    for(var i=0;i<news.length;i++){
+      news[i].style.width="0px";
+      news[i].style.top="0px";
+      news[i].style.background="";
+      news[i].innerText="";
+    }
+    inner_container.style.overflow="hidden";
+    setTimeout(function(){
+      news[0].style.width="70px";
+      news[0].style.height="70px";
+      news[0].style.marginLeft="10px";
+      news[0].style.marginTop="20px";
+      news[0].style.background="url(images/icon.png)"
+    },100);
+  }
+
+  news[0].onclick=function(){
+    if(closeApp){
+      setTimeout(function(){
+        news[0].innerText="Movie";
+        news[0].style.width="320px";
+        news[0].style.height="200px";
+        news[0].style.marginLeft="0px";
+        news[0].style.marginTop="0px";
+        news[0].style.background="url(css/images/movie.gif)"
+        inner_container.style.overflowY="scroll";
+      },100);
+
+      setTimeout(function(){
+          for(var i=1;i<news.length;i++){
+            news[i].style.width="320px";
+            news[i].style.top="200px";
+          }
+          news[1].innerText="Politics";
+          news[2].innerText="shopping";
+          news[3].innerText="Stars";
+          news[4].innerText="Sports";
+          news[5].innerText="Travel";
+          news[6].innerText="Entertainment";
+          news[7].innerText="Financial";
+      },1100);
+      
+      closeApp=false;
+    }
+  }
 }

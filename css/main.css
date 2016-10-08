@@ -9,7 +9,7 @@
     height: 1000px; }
     #show_body #russiablock #russiablock_des {
       text-align: center;
-      font-size: 20px; }
+      font-size: 30px; }
     #show_body #russiablock .blockpiece {
       position: absolute;
       transition: linear 0.3s;
@@ -106,7 +106,7 @@
       -o-perspective: 800px;
       position: relative;
       margin: 0 auto;
-      width: 450px;
+      width: 470px;
       height: 1000px; }
     #show_body #mobile .iphone-front, #show_body #mobile .iphone-back {
       transform-style: preserve-3d;
@@ -145,20 +145,20 @@
       -moz-transform: rotateY(360deg);
       -ms-transform: rotateY(360deg);
       -o-transform: rotateY(360deg); }
-    #show_body #mobile .outer-container {
+    #show_body #mobile #outer-container {
       position: absolute;
       top: 118px;
       left: 31px;
       width: 320px;
       height: 567px;
-      background: red;
+      background: url(images/iphone_desk.png);
       overflow: hidden; }
-    #show_body #mobile .inner-container {
+    #show_body #mobile #inner-container {
       position: absolute;
       left: 0;
       overflow-x: hidden;
       overflow-y: scroll; }
-    #show_body #mobile .content {
+    #show_body #mobile #content {
       width: 320px;
       height: 567px; }
     #show_body #mobile .news {
@@ -211,5 +211,18 @@
       background: url(images/shopping.gif);
       background-size: cover;
       color: white; }
+    #show_body #mobile #homebtn {
+      position: absolute;
+      left: 155px;
+      top: 705px;
+      width: 70px;
+      height: 70px; }
+    #show_body #mobile #homebtn_des {
+      font-size: 20px;
+      position: absolute;
+      text-align: center;
+      top: 940px;
+      width: 470px;
+      height: 40px; }
 
 /*# sourceMappingURL=main.css.map */
