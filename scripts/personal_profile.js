@@ -709,6 +709,8 @@ window.onload=function(){
   RandomBlock();
 
   news[0].style.transition="ease 1s";
+  news[1].style.transition="ease 1s";
+  news[2].style.transition="ease 1s";
 
   homebtn.onclick=function(){
     closeApp=true;
@@ -725,6 +727,14 @@ window.onload=function(){
       news[0].style.marginLeft="10px";
       news[0].style.marginTop="20px";
       news[0].style.background="url(images/icon.png)"
+      news[1].style.width="0px";
+      news[1].style.height="0px";
+      news[1].style.marginLeft="40px";
+      news[1].style.marginTop="-50px";
+      news[2].style.width="0px";
+      news[2].style.height="0px";
+      news[2].style.marginLeft="40px";
+      news[2].style.marginTop="0px";
     },100);
   }
 
@@ -736,17 +746,27 @@ window.onload=function(){
         news[0].style.height="200px";
         news[0].style.marginLeft="0px";
         news[0].style.marginTop="0px";
-        news[0].style.background="url(css/images/movie.gif)"
+        news[0].style.background="url(css/images/movie.gif)";
+        news[1].innerText="Politics";
+        news[1].style.width="320px";
+        news[1].style.height="200px";
+        news[1].style.marginLeft="0px";
+        news[1].style.marginTop="0px";
+        news[1].style.background="url(http://i2.cdn.turner.com/cnnnext/dam/assets/160712193345-01-pence-trump-split-overlay-tease.jpg)";
+        news[2].innerText="Shopping";
+        news[2].style.width="320px";
+        news[2].style.height="200px";
+        news[2].style.marginLeft="0px";
+        news[2].style.marginTop="0px";
+        news[2].style.background="url(css/images/shopping.gif)";
         inner_container.style.overflowY="scroll";
       },100);
 
       setTimeout(function(){
-          for(var i=1;i<news.length;i++){
+          for(var i=3;i<news.length;i++){
             news[i].style.width="320px";
             news[i].style.top="200px";
           }
-          news[1].innerText="Politics";
-          news[2].innerText="shopping";
           news[3].innerText="Stars";
           news[4].innerText="Sports";
           news[5].innerText="Travel";
