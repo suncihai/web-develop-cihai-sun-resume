@@ -150,7 +150,7 @@
 			position:absolute;
 			top:130px;
 			left:50px;
-			background:url(images/iphone.png) no-repeat right center;
+			background:url(../images/iphone.png) no-repeat right center;
 			transition:0.8s;
 		}
 
@@ -184,7 +184,7 @@
 			left:31px;
 			width:320px;
 			height:567px;
-			background:url(images/iphone_desk.png);
+			background:url(../images/iphone_desk.png);
 			overflow:hidden;
 		}
 		#inner-container{
@@ -246,14 +246,14 @@
 		#movie{
 			width:320px;
 			height:200px;
-			background:url(images/movie.gif);
+			background:url(../images/movie.gif);
 			background-size:cover;
 			color:white;
 		}
 		#shopping{
 			width:320px;
 			height:200px;
-			background:url(images/shopping.gif);
+			background:url(../images/shopping.gif);
 			background-size:cover;
 			color:white;
 		}

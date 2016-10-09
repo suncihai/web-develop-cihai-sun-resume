@@ -125,7 +125,7 @@
       position: absolute;
       top: 130px;
       left: 50px;
-      background: url(images/iphone.png) no-repeat right center;
+      background: url(../images/iphone.png) no-repeat right center;
       transition: 0.8s; }
     #show_body #mobile .iphone-front {
       transform: rotateY(180deg);
@@ -152,7 +152,7 @@
       left: 31px;
       width: 320px;
       height: 567px;
-      background: url(images/iphone_desk.png);
+      background: url(../images/iphone_desk.png);
       overflow: hidden; }
     #show_body #mobile #inner-container {
       position: absolute;
@@ -204,13 +204,13 @@
     #show_body #mobile #movie {
       width: 320px;
       height: 200px;
-      background: url(images/movie.gif);
+      background: url(../images/movie.gif);
       background-size: cover;
       color: white; }
     #show_body #mobile #shopping {
       width: 320px;
       height: 200px;
-      background: url(images/shopping.gif);
+      background: url(../images/shopping.gif);
       background-size: cover;
       color: white; }
     #show_body #mobile #homebtn {
