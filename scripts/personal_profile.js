@@ -10,6 +10,7 @@ window.onload=function(){
   var news=document.getElementsByClassName('news');
   var inner_container=document.getElementById('inner-container');
   var newsApp=document.getElementById('newsApp');
+  var newsApp_icon=document.getElementById('newsApp_icon');
   var minionsApp=document.getElementById('minionsApp');
   var closeApp=false;
   var PixelChange=false;
@@ -711,6 +712,7 @@ window.onload=function(){
   RandomBlock();
 
   //iphone apps
+  newsApp_icon.style.transition="ease 1s";
   news[0].style.transition="ease 1s";
   news[1].style.transition="ease 1s";
   news[2].style.transition="ease 1s";
@@ -727,19 +729,11 @@ window.onload=function(){
     }
     inner_container.style.overflow="hidden";
     setTimeout(function(){
-      news[0].style.width="70px";
-      news[0].style.height="70px";
-      news[0].style.marginLeft="10px";
-      news[0].style.marginTop="20px";
-      news[0].style.background="url(images/news_icon.png)"
-      news[1].style.width="0px";
-      news[1].style.height="0px";
-      news[1].style.marginLeft="40px";
-      news[1].style.marginTop="-50px";
-      news[2].style.width="0px";
-      news[2].style.height="0px";
-      news[2].style.marginLeft="40px";
-      news[2].style.marginTop="0px";
+      newsApp_icon.style.width="70px";
+      newsApp_icon.style.height="70px";
+      newsApp_icon.style.marginLeft="10px";
+      newsApp_icon.style.marginTop="20px";
+      newsApp_icon.style.background="url(images/news_icon.png)"
       minionsApp.style.width="70px";
       minionsApp.style.height="70px";
       minionsApp.style.left="90px";
@@ -748,16 +742,21 @@ window.onload=function(){
     },100);
   }
 
-  news[0].onclick=function(){
+  newsApp_icon.onclick=function(){
     if(closeApp){
       minionsApp.style.transition="0s";
       setTimeout(function(){
+        newsApp_icon.style.width="";
+        newsApp_icon.style.height="";
+        newsApp_icon.style.marginLeft="";
+        newsApp_icon.style.marginTop="";
+        newsApp_icon.style.background="";
         news[0].innerText="Movie";
         news[0].style.width="320px";
         news[0].style.height="200px";
         news[0].style.marginLeft="0px";
         news[0].style.marginTop="0px";
-        news[0].style.background="url(css/images/movie.gif)";
+        news[0].style.background="url(images/movie.gif)";
         news[1].innerText="Politics";
         news[1].style.width="320px";
         news[1].style.height="200px";
@@ -769,7 +768,7 @@ window.onload=function(){
         news[2].style.height="200px";
         news[2].style.marginLeft="0px";
         news[2].style.marginTop="0px";
-        news[2].style.background="url(css/images/shopping.gif)";
+        news[2].style.background="url(images/shopping.gif)";
         minionsApp.style.width="0px";
         minionsApp.style.height="0px";
         inner_container.style.overflowY="scroll";
