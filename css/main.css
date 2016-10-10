@@ -48,7 +48,7 @@
       top: 650px; }
     #show_body #resumeBody #word5 {
       font-size: 46px;
-      left: 350px;
+      left: 34%;
       top: 800px;
       z-index: 10; }
     #show_body #resumeBody .circle {
@@ -62,7 +62,7 @@
       z-index: 5; }
     #show_body #resumeBody #heart {
       position: absolute;
-      left: 300px;
+      left: 30%;
       top: 750px;
       z-index: 6; }
     #show_body #resumeBody .heartHide:before, #show_body #resumeBody .heartHide:after {
@@ -227,6 +227,14 @@
       width: 470px;
       height: 40px; }
     #show_body #mobile #minionsApp {
+      position: absolute;
+      width: 0px;
+      height: 0px; }
+    #show_body #mobile #doraemongameApp {
+      position: absolute;
+      width: 0px;
+      height: 0px; }
+    #show_body #mobile #doraemongameApp_icon {
       position: absolute;
       width: 0px;
       height: 0px; }

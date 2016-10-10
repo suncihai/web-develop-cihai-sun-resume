@@ -59,7 +59,7 @@
 	    }
 	    #word5{
             font-size:46px;
-            left:350px;
+            left:34%;
             top:800px;
             z-index:10;
 	    }
@@ -77,7 +77,7 @@
 
 	    #heart{
 	    	position:absolute;
-	    	left:300px;
+	    	left:30%;
 	    	top:750px;
 	    	z-index:6; 
 	    }
@@ -273,6 +273,16 @@
 			height:40px;
 		}
 		#minionsApp{
+			position:absolute;
+			width:0px;
+			height:0px;
+		}
+		#doraemongameApp{
+			position:absolute;
+			width:0px;
+			height:0px;
+		}
+		#doraemongameApp_icon{
 			position:absolute;
 			width:0px;
 			height:0px;
