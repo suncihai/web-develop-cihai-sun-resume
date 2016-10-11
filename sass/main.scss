@@ -201,6 +201,9 @@
 		.news{
 			font-size:24px;
 		}
+		#newsApp_icon:hover{
+			cursor:pointer;
+		}
 		#news1{
 			width:320px;
 			height:200px;
@@ -264,6 +267,9 @@
 			width:70px;
 			height:70px;
 		}
+		#homebtn:hover{
+			cursor:pointer;
+		}
 		#homebtn_des{
 			font-size:20px;
 			position:absolute;
@@ -277,6 +283,16 @@
 			width:0px;
 			height:0px;
 		}
+		#minionsApp_icon{
+			position:absolute;
+			background:white;
+			border:2px solid black;
+			font-size:20px; 
+			width:240px;
+			height:40px;
+			left:35px;
+			top:80px;
+		}
 		#doraemongameApp{
 			position:absolute;
 			width:0px;
@@ -286,6 +302,9 @@
 			position:absolute;
 			width:0px;
 			height:0px;
+		}
+		#doraemongameApp_icon:hover{
+			cursor:pointer;
 		}
 	}
 }

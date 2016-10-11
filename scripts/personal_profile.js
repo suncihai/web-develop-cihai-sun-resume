@@ -728,11 +728,14 @@ window.onload=function(){
   doraemongameApp.style.transition="ease 1s";
   doraemongameApp_icon.style.transition="ease 1s";
 
+  $('#minionsApp').hover(function(){$('#minionsApp_icon').css("display","block")},function(){$('#minionsApp_icon').css("display","none")});
+
   homebtn.onclick=function(){
     closeApp=true;
     minionsApp.style.transition="ease 1s";
     doraemongameApp.style.transition="ease 1s";
     doraemongameApp_icon.style.transition="ease 1s";
+    $('#newsApp_icon').hover(function(){$(this).css("cursor","pointer")});
     switch(appOn){
       case 1:
          for(var i=0;i<news.length;i++){
@@ -771,7 +774,7 @@ window.onload=function(){
         minionsApp.style.background="url(images/minions_icon.png)";
         doraemongameApp_icon.style.width="70px";
         doraemongameApp_icon.style.height="70px";
-        doraemongameApp_icon.style.left="180px";
+        doraemongameApp_icon.style.left="170px";
         doraemongameApp_icon.style.top="0px";
         doraemongameApp_icon.style.background="url(images/doraemongame_icon.png)";
     },100);
@@ -784,6 +787,7 @@ window.onload=function(){
     if(closeApp){
       minionsApp.style.transition="0s";
       doraemongameApp_icon.style.transition="0s";
+      $('#newsApp_icon').hover(function(){$(this).css("cursor","default")});
       setTimeout(function(){
         newsApp_icon.style.width="";
         newsApp_icon.style.height="";
