@@ -607,6 +607,15 @@ window.onload=function(){
            blockchild_PArr[1].innerText="S";
            blockchild_PArr[2].innerText="S";
            break;
+        case "REACTJS":
+           blockchild_PArr[0].innerText="R";
+           blockchild_PArr[1].innerText="E";
+           blockchild_PArr[2].innerText="A";
+           blockchild_PArr[3].innerText="C";
+           blockchild_PArr[4].innerText="T";
+           blockchild_PArr[5].innerText="J";
+           blockchild_PArr[6].innerText="S";
+           break;
         case "JQUERY":
            blockchild_PArr[0].innerText="J";
            blockchild_PArr[1].innerText="Q";
@@ -614,6 +623,14 @@ window.onload=function(){
            blockchild_PArr[3].innerText="E";
            blockchild_PArr[4].innerText="R";
            blockchild_PArr[5].innerText="Y";
+           break;
+        case "NODEJS":
+           blockchild_PArr[0].innerText="N";
+           blockchild_PArr[1].innerText="O";
+           blockchild_PArr[2].innerText="D";
+           blockchild_PArr[3].innerText="E";
+           blockchild_PArr[4].innerText="J";
+           blockchild_PArr[5].innerText="S";
            break;
         case "ANGULARJS":
            blockchild_PArr[0].innerText="A";
@@ -697,7 +714,7 @@ window.onload=function(){
       blockfall();
   }
   
-  var SkillArr=["HTML","CSS","JAVASCRIPT","AJAX","JQUERY","OBJECTIVEC","JAVA","GULP","BOOTSTRAP","SASS","ANGULARJS"];
+  var SkillArr=["ANGULARJS","REACTJS","BOOTSTRAP","NODEJS","JAVASCRIPT","AJAX","JQUERY","HTML","OBJECTIVEC","CSS","JAVA","GULP","SASS"];
   var round=0;
 
   function RandomBlock(){
