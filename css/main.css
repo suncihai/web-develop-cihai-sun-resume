@@ -1,7 +1,8 @@
 #transform_board {
   height: 500px;
   background: white;
-  position: relative; }
+  position: relative;
+  padding: 0px !important; }
 
 #show_body {
   position: relative; }
@@ -24,7 +25,8 @@
   #show_body #resumeBody {
     background: gray;
     height: 1000px;
-    z-index: 0; }
+    z-index: 0;
+    padding: 0px !important; }
     #show_body #resumeBody .resume {
       position: absolute;
       color: gray;
@@ -98,7 +100,8 @@
       transform: rotate(45deg);
       transform-origin: 100% 100%; }
   #show_body #mobile {
-    height: 1000px; }
+    height: 1000px;
+    padding: 0px !important; }
     #show_body #mobile .container {
       perspective: 800px;
       -webkit-perspective: 800px;
@@ -107,13 +110,14 @@
       -o-perspective: 800px;
       position: relative;
       margin: 0 auto;
-      width: 470px;
-      height: 1000px; }
+      width: 400px;
+      height: 1000px;
+      padding: 0px !important; }
     #show_body #mobile .iphone-front, #show_body #mobile .iphone-back {
       transform-style: preserve-3d;
       -webkit-transform-style: preserve-3d;
       -moz-transform-style: preserve-3d;
-      -ms-transform-style: preserve-3d;
+      -ms-transform-style: none;
       -o-transform-style: preserve-3d;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
@@ -131,20 +135,20 @@
       transform: rotateY(180deg);
       -webkit-transform: rotateY(180deg);
       -moz-transform: rotateY(180deg);
-      -ms-transform: rotateY(180deg);
+      -ms-transform: none;
       -o-transform: rotateY(180deg);
       background-position: left center; }
     #show_body #mobile .container:hover .iphone-back {
       transform: rotateY(180deg);
       -webkit-transform: rotateY(180deg);
       -moz-transform: rotateY(180deg);
-      -ms-transform: rotateY(180deg);
+      -ms-transform: none;
       -o-transform: rotateY(180deg); }
     #show_body #mobile .container:hover .iphone-front {
       transform: rotateY(360deg);
       -webkit-transform: rotateY(360deg);
       -moz-transform: rotateY(360deg);
-      -ms-transform: rotateY(360deg);
+      -ms-transform: none;
       -o-transform: rotateY(360deg); }
     #show_body #mobile #outer-container {
       position: absolute;
@@ -228,7 +232,7 @@
       position: absolute;
       text-align: center;
       top: 940px;
-      width: 470px;
+      width: 450px;
       height: 40px; }
     #show_body #mobile #minionsApp {
       position: absolute;
