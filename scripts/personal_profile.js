@@ -1,7 +1,6 @@
 window.onload=function(){
 	var shuffleArr=[];
   var transformBoard=document.getElementById('transform_board');
-  var showBody=document.getElementById('show_body');
   var russiablock=document.getElementById('russiablock');
   var resume=document.getElementById('resumeBody');
   var heart=document.getElementById('heart');
@@ -25,7 +24,7 @@ window.onload=function(){
 	for(var i=0;i<67;i++){
 		var tmpPixel=document.createElement('div');
 		tmpPixel.setAttribute('id',"pixel"+(i+1));
-		tmpPixel.setAttribute('style',"position:absolute;width:20px;height:20px;background:gray;top:'';left:''");
+		tmpPixel.setAttribute('style',"position:absolute;width:20px;height:20px;background:white;top:'';left:''");
 		tmpPixel.style.transition="ease-in 3s";
 		shuffleArr.push(tmpPixel);
 		transformBoard.appendChild(tmpPixel);
@@ -56,18 +55,6 @@ window.onload=function(){
   //switch between cihai and smile face
   function ChangePixel(){
      shufflePixelArr();
-     var randombackground=Math.random();
-     if(randombackground<=0.5){
-        transformBoard.style.background="gray";
-        for(var i=0;i<67;i++){
-           shuffleArr[i].style.background="white";
-        }
-     }else{
-        transformBoard.style.background="white";
-        for(var i=0;i<67;i++){
-           shuffleArr[i].style.background="gray";
-        }
-     }
      
      if(PixelChange){
          cihai();
@@ -82,7 +69,7 @@ window.onload=function(){
   
   //generate cihai pixel image
   function cihai(){
-      var customX=window.innerWidth/10;
+      var customX=window.innerWidth/3;
       var customY=160;
 
       //print out "C"
@@ -183,7 +170,7 @@ window.onload=function(){
   
   //generate smile face image
   function smileFace(){
-      var customX=200+window.innerWidth/10;
+      var customX=200+window.innerWidth/3;
       var customY=70;
       
       for(var sx=0;sx<11;sx++){
@@ -255,14 +242,10 @@ window.onload=function(){
   resume.onclick=function(e){
      e=e||window.event;
      var scrollY= (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-     if(window.innerWidth>1000){
-        var clickX=e.clientX-russiablock.clientWidth;
-        var clickY=e.clientY-transformBoard.clientHeight+scrollY;
-     }else{
-        var clickX=e.clientX;
-        var clickY=e.clientY-transformBoard.clientHeight-russiablock.clientHeight+scrollY;
-     }
+     var clickX=e.clientX;
+     var clickY=e.clientY-transformBoard.clientHeight-russiablock.clientHeight+scrollY;
      var overlapRadius=overlap.clientWidth/2;
+
      console.log(window.innerWidth);
      console.log(clickX+" "+clickY);
 
@@ -274,11 +257,11 @@ window.onload=function(){
 
      if(clickY<overlapRadius){
        clickY=overlapRadius;
-     }else if(clickY>resume.clientWidth-overlapRadius){
+     }else if(clickY>resume.clientHeight-overlapRadius){
        clickY=resume.clientHeight-overlapRadius;
      }
      
-     if(clickX>400&&clickX<500&&clickY>700){
+     if(clickX>600&&clickX<800&&clickY>700){
        setTimeout(function(){
          heart.className="heartShow";
        },500);
@@ -314,7 +297,7 @@ window.onload=function(){
         block1child_PArr[i].className="textpiece";
       }
 
-      var randomLeft=80+Math.ceil(Math.random()*200);
+      var randomLeft=Math.ceil(Math.random()*500);
       var randomShape=Math.ceil(Math.random()*4);
 
       //different shape
@@ -581,7 +564,7 @@ window.onload=function(){
         blockchild_PArr[i].className="textpiece";
       }
 
-      var randomLeft=Math.ceil(Math.random()*240);
+      var randomLeft=Math.ceil(Math.random()*500);
       var blockdisappear=0;
 
       if(length%3==0){
@@ -767,11 +750,8 @@ window.onload=function(){
           doraemongameApp.style.height="0px";
           doraemongameApp.style.background="";
           doraemongameApp.innerHTML="";
-          $("#resumeBody").removeClass('col-md-3').addClass('col-md-6');
-          $("#mobile").removeClass('col-md-6').addClass('col-md-3');
           container.style.transform="rotate(0deg)";
           doraemongameApp.style.transform="rotate(0deg)";
-          $("#homebtn_des").css("left","");
           break;
       default:
           break;
@@ -865,12 +845,8 @@ window.onload=function(){
       doraemongameApp.style.left="-124px";
       doraemongameApp.style.top="-143px";
       doraemongameApp.innerHTML='<object type="text/html" width="567px" height="320px" data="http://suncihai.x10host.com/doraemon_game_mobile/doraemon_game_mobile.html"></object>';
-
-      $("#resumeBody").removeClass('col-md-6').addClass('col-md-3');
-      $("#mobile").removeClass('col-md-3').addClass('col-md-6');
       container.style.transform="rotate(-90deg)";
       doraemongameApp.style.transform="rotate(90deg)";
-      $("#homebtn_des").css("left","35%");
     }
     closeApp=false;
   }

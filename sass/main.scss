@@ -1,314 +1,313 @@
 #transform_board{
 	height:500px;
-	background:white;
+	background:gray;
 	position:relative;
 	padding:0px !important;
 }
 
-#show_body{
+#russiablock{
+   position:relative;
+   height:1000px;
+   #russiablock_des{
+   	  text-align:center;
+   	  font-size:30px;
+   }
+   .blockpiece{
+   	  position:absolute;
+   	  transition:linear 0.3s;
+   	  width:40px;
+   	  height:40px;
+   	  border-radius:40px;
+   	  background:gray;
+   	  color:white;
+   }
+
+   .textpiece{
+   	 margin-left:14px;
+   	 margin-top:10px
+   }
+}
+
+#resumeBody{
 	position:relative;
-	#russiablock{
-	   height:1000px;
-	   #russiablock_des{
-	   	  text-align:center;
-	   	  font-size:30px;
-	   }
-	   .blockpiece{
-	   	  position:absolute;
-	   	  transition:linear 0.3s;
-	   	  width:40px;
-	   	  height:40px;
-	   	  border-radius:40px;
-	   	  background:gray;
-	   	  color:white;
-	   }
+	background:gray;
+	height:1000px;
+    z-index:0;
+    padding:0px !important;
+    .resume{
+    	position:absolute;
+    	color:gray;
+    	z-index:10;
+    }
+    #word1{
+    	width:300px;
+        font-size:32px;
+        left:20px;
+        top:150px;
+    }
+    #word2{
+        font-size:44px;
+        left:300px;
+        top:250px;
+    }
+    #word3{
+        font-size:42px;
+        left:300px;
+        top:450px;
+    }
+    #word4{
+        font-size:36px;
+        left:200px;
+        top:650px;
+    }
+    #word5{
+        font-size:46px;
+        left:34%;
+        top:800px;
+        z-index:10;
+    }
 
-	   .textpiece{
-	   	 margin-left:14px;
-	   	 margin-top:10px
-	   }
+    .circle{
+    	width:400px;
+    	height:400px;
+    	border-radius:400px;
+    	background:white;
+    	position:absolute;
+    	left:0px;
+    	top:0px;
+    	z-index:5;
+    }
+
+    #heart{
+    	position:absolute;
+    	left:30%;
+    	top:750px;
+    	z-index:6; 
+    }
+
+    .heartHide:before,.heartHide:after{
+        transition:ease 1s;
+		position: absolute;
+	    content: "";
+	    left: 150px;
+	    top: 0;
+	    background:gray;
+	    width: 150px;
+	    height: 240px;
+	    border-radius: 150px 150px 0 0;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
 	}
-	#resumeBody{
-		background:gray;
-		height:1000px;
-	    z-index:0;
-	    padding:0px !important;
-	    .resume{
-	    	position:absolute;
-	    	color:gray;
-	    	z-index:10;
-	    }
-	    #word1{
-	    	width:300px;
-            font-size:32px;
-            left:20px;
-            top:150px;
-	    }
-	    #word2{
-            font-size:44px;
-            left:300px;
-            top:250px;
-	    }
-	    #word3{
-            font-size:42px;
-            left:300px;
-            top:450px;
-	    }
-	    #word4{
-            font-size:36px;
-            left:200px;
-            top:650px;
-	    }
-	    #word5{
-            font-size:46px;
-            left:34%;
-            top:800px;
-            z-index:10;
-	    }
-
-	    .circle{
-	    	width:400px;
-	    	height:400px;
-	    	border-radius:400px;
-	    	background:white;
-	    	position:absolute;
-	    	left:0px;
-	    	top:0px;
-	    	z-index:5;
-	    }
-
-	    #heart{
-	    	position:absolute;
-	    	left:30%;
-	    	top:750px;
-	    	z-index:6; 
-	    }
-
-	    .heartHide:before,.heartHide:after{
-	        transition:ease 1s;
-			position: absolute;
-		    content: "";
-		    left: 150px;
-		    top: 0;
-		    background:gray;
-		    width: 150px;
-		    height: 240px;
-		    border-radius: 150px 150px 0 0;
-	        transform: rotate(-45deg);
-	        transform-origin: 0 100%;
-		}
-		.heartHide:after{
-			left: 0;
-		    transform: rotate(45deg);
-		    transform-origin :100% 100%;
-		}
-
-		.heartShow:before,.heartShow:after{
-			transition:ease 1s;
-			position: absolute;
-		    content: "";
-		    left: 150px;
-		    top: 0;
-		    background:red;
-		    width: 150px;
-		    height: 240px;
-		    border-radius: 150px 150px 0 0;
-	        transform: rotate(-45deg);
-	        transform-origin: 0 100%;
-		}
-		.heartShow:after{
-			left: 0;
-		    transform: rotate(45deg);
-		    transform-origin :100% 100%;
-		}
+	.heartHide:after{
+		left: 0;
+	    transform: rotate(45deg);
+	    transform-origin :100% 100%;
 	}
-	#mobile{
+
+	.heartShow:before,.heartShow:after{
+		transition:ease 1s;
+		position: absolute;
+	    content: "";
+	    left: 150px;
+	    top: 0;
+	    background:red;
+	    width: 150px;
+	    height: 240px;
+	    border-radius: 150px 150px 0 0;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+	}
+	.heartShow:after{
+		left: 0;
+	    transform: rotate(45deg);
+	    transform-origin :100% 100%;
+	}
+}
+
+#mobile{
+	position:relative;
+	height:1000px;
+	padding:0px!important;
+	.container{
+		perspective:800px;
+		-webkit-perspective:800px;
+		-moz-perspective:800px;
+		-ms-perspective: 800px;
+		-o-perspective:800px;
+		position:relative;
+		margin:0 auto;
+		width:400px;
 		height:1000px;
-		padding:0px!important;
-		.container{
-			perspective:800px;
-			-webkit-perspective:800px;
-			-moz-perspective:800px;
-			-ms-perspective: 800px;
-			-o-perspective:800px;
-			position:relative;
-			margin:0 auto;
-			width:400px;
-			height:1000px;
-            padding:0px !important;
-		}
-		.iphone-front,.iphone-back{
-			transform-style:preserve-3d;
-			-webkit-transform-style: preserve-3d;
-			-moz-transform-style:preserve-3d;
-			-ms-transform-style:none;
-			-o-transform-style:preserve-3d;
-			backface-visibility:hidden;
-			-webkit-backface-visibility: hidden;
-			-moz-backface-visibility:hidden;
-			-ms-backface-visibility:hidden;
-			-o-backface-visibility:hidden;
-			width:380px;
-			height:800px;
-			position:absolute;
-			top:130px;
-			left:50px;
-			background:url(../images/iphone.png) no-repeat right center;
-			transition:0.8s;
-		}
+        padding:0px !important;
+	}
+	.iphone-front,.iphone-back{
+		transform-style:preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style:preserve-3d;
+		-ms-transform-style:none;
+		-o-transform-style:preserve-3d;
+		backface-visibility:hidden;
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility:hidden;
+		-ms-backface-visibility:hidden;
+		-o-backface-visibility:hidden;
+		width:380px;
+		height:800px;
+		position:absolute;
+		top:130px;
+		left:50px;
+		background:url(../images/iphone.png) no-repeat right center;
+		transition:0.8s;
+	}
 
-		.iphone-front{
-			transform:rotateY(180deg);
-			-webkit-transform:rotateY(180deg);
-			-moz-transform:rotateY(180deg);
-			-ms-transform:none;
-			-o-transform:rotateY(180deg);
-			background-position:left center;
-		}
+	.iphone-front{
+		transform:rotateY(180deg);
+		-webkit-transform:rotateY(180deg);
+		-moz-transform:rotateY(180deg);
+		-ms-transform:none;
+		-o-transform:rotateY(180deg);
+		background-position:left center;
+	}
 
-		.container:hover .iphone-back{
-			transform:rotateY(180deg);
-			-webkit-transform:rotateY(180deg);
-			-moz-transform:rotateY(180deg);
-			-ms-transform:none;
-			-o-transform:rotateY(180deg);
-		}
+	.container:hover .iphone-back{
+		transform:rotateY(180deg);
+		-webkit-transform:rotateY(180deg);
+		-moz-transform:rotateY(180deg);
+		-ms-transform:none;
+		-o-transform:rotateY(180deg);
+	}
 
-		.container:hover .iphone-front{
-			transform:rotateY(360deg);
-			-webkit-transform:rotateY(360deg);
-			-moz-transform:rotateY(360deg);
-			-ms-transform:none;
-			-o-transform:rotateY(360deg);
-		}
-		#outer-container{
-			position:absolute;
-			top:118px;
-			left:31px;
-			width:320px;
-			height:567px;
-			background:url(../images/iphone_desk.png);
-			overflow:hidden;
-		}
-		#inner-container{
-			position:absolute;
-			left:0;
-			overflow-x:hidden;
-			overflow-y:scroll;
-		}
-		#content{
-			position:relative;
-			width:320px;
-			height:567px;
-		}
-		.news{
-			font-size:24px;
-		}
-		#newsApp_icon:hover{
-			cursor:pointer;
-		}
-		#news1{
-			width:320px;
-			height:200px;
-			background:url("http://i2.cdn.turner.com/cnnnext/dam/assets/160712193345-01-pence-trump-split-overlay-tease.jpg");
-			background-size:cover!important;
-			color:white;
-		}
-		#news2{
-			width:320px;
-			height:200px;
-			background:url("http://i2.cdn.turner.com/cnnnext/dam/assets/161005100340-laura-prepon-ben-foster-medium-tease.jpg");
-			background-size:cover;
-			color:white;
-		}
-		#news3{
-			width:320px;
-			height:200px;
-			background:url("http://img.bleacherreport.net/cms/media/image/9f/8c/c4/a1/2b60/47a5/b85f/2d5f26d99eee/crop_exact_607676807_jm_4631_7f3a72e93c4f6d55f0180190d5722578.jpg?w=460&h=259&q=75");
-			background-size:cover;
-			color:white;
-		}
-		#news4{
-			width:320px;
-			height:200px;
-			background:url("http://i2.cdn.turner.com/cnnnext/dam/assets/151123182014-02-weird-water-features-large-tease.jpg");
-			background-size:cover;
-			color:white;
-		}
-		#news5{
-			width:320px;
-			height:200px;
-			background:url("http://i2.cdn.turner.com/cnnnext/dam/assets/161005100321-dwts-marriage-proposal-sasha-farber-emma-slater-2-medium-tease.jpg");
-			background-size:cover;
-			color:white;
-		}
-		#news6{
-			width:320px;
-			height:200px;
-			background:url("http://www.nextadvisor.com/images/uploads/CardsOutOfFocus_460x259.jpg");
-			background-size:cover;
-			color:white;
-		}
-		#movie{
-			width:320px;
-			height:200px;
-			background:url(../images/movie.gif);
-			background-size:cover;
-			color:white;
-		}
-		#shopping{
-			width:320px;
-			height:200px;
-			background:url(../images/shopping.gif);
-			background-size:cover;
-			color:white;
-		}
-		#homebtn{
-			position:absolute;
-			left:155px;
-			top:705px;
-			width:70px;
-			height:70px;
-		}
-		#homebtn:hover{
-			cursor:pointer;
-		}
-		#homebtn_des{
-			font-size:20px;
-			position:absolute;
-			text-align:center;
-			top:940px;
-			width:450px;
-			height:40px;
-		}
-		#minionsApp{
-			position:absolute;
-			width:0px;
-			height:0px;
-		}
-		#minionsApp_icon{
-			position:absolute;
-			background:white;
-			border:2px solid black;
-			font-size:20px; 
-			width:240px;
-			height:40px;
-			left:35px;
-			top:80px;
-		}
-		#doraemongameApp{
-			position:absolute;
-			width:0px;
-			height:0px;
-		}
-		#doraemongameApp_icon{
-			position:absolute;
-			width:0px;
-			height:0px;
-		}
-		#doraemongameApp_icon:hover{
-			cursor:pointer;
-		}
+	.container:hover .iphone-front{
+		transform:rotateY(360deg);
+		-webkit-transform:rotateY(360deg);
+		-moz-transform:rotateY(360deg);
+		-ms-transform:none;
+		-o-transform:rotateY(360deg);
+	}
+	#outer-container{
+		position:absolute;
+		top:118px;
+		left:31px;
+		width:320px;
+		height:567px;
+		background:url(../images/iphone_desk.png);
+		overflow:hidden;
+	}
+	#inner-container{
+		position:absolute;
+		left:0;
+		overflow-x:hidden;
+		overflow-y:scroll;
+	}
+	#content{
+		position:relative;
+		width:320px;
+		height:567px;
+	}
+	.news{
+		font-size:24px;
+	}
+	#newsApp_icon:hover{
+		cursor:pointer;
+	}
+	#news1{
+		width:320px;
+		height:200px;
+		background:url("http://i2.cdn.turner.com/cnnnext/dam/assets/160712193345-01-pence-trump-split-overlay-tease.jpg");
+		background-size:cover!important;
+		color:white;
+	}
+	#news2{
+		width:320px;
+		height:200px;
+		background:url("http://i2.cdn.turner.com/cnnnext/dam/assets/161005100340-laura-prepon-ben-foster-medium-tease.jpg");
+		background-size:cover;
+		color:white;
+	}
+	#news3{
+		width:320px;
+		height:200px;
+		background:url("http://img.bleacherreport.net/cms/media/image/9f/8c/c4/a1/2b60/47a5/b85f/2d5f26d99eee/crop_exact_607676807_jm_4631_7f3a72e93c4f6d55f0180190d5722578.jpg?w=460&h=259&q=75");
+		background-size:cover;
+		color:white;
+	}
+	#news4{
+		width:320px;
+		height:200px;
+		background:url("http://i2.cdn.turner.com/cnnnext/dam/assets/151123182014-02-weird-water-features-large-tease.jpg");
+		background-size:cover;
+		color:white;
+	}
+	#news5{
+		width:320px;
+		height:200px;
+		background:url("http://i2.cdn.turner.com/cnnnext/dam/assets/161005100321-dwts-marriage-proposal-sasha-farber-emma-slater-2-medium-tease.jpg");
+		background-size:cover;
+		color:white;
+	}
+	#news6{
+		width:320px;
+		height:200px;
+		background:url("http://www.nextadvisor.com/images/uploads/CardsOutOfFocus_460x259.jpg");
+		background-size:cover;
+		color:white;
+	}
+	#movie{
+		width:320px;
+		height:200px;
+		background:url(../images/movie.gif);
+		background-size:cover;
+		color:white;
+	}
+	#shopping{
+		width:320px;
+		height:200px;
+		background:url(../images/shopping.gif);
+		background-size:cover;
+		color:white;
+	}
+	#homebtn{
+		position:absolute;
+		left:155px;
+		top:705px;
+		width:70px;
+		height:70px;
+	}
+	#homebtn:hover{
+		cursor:pointer;
+	}
+	#homebtn_des{
+		font-size:20px;
+		text-align:center;
+		height:40px;
+	}
+	#minionsApp{
+		position:absolute;
+		width:0px;
+		height:0px;
+	}
+	#minionsApp_icon{
+		position:absolute;
+		background:white;
+		border:2px solid black;
+		font-size:20px; 
+		width:240px;
+		height:40px;
+		left:35px;
+		top:80px;
+	}
+	#doraemongameApp{
+		position:absolute;
+		width:0px;
+		height:0px;
+	}
+	#doraemongameApp_icon{
+		position:absolute;
+		width:0px;
+		height:0px;
+	}
+	#doraemongameApp_icon:hover{
+		cursor:pointer;
 	}
 }
 
