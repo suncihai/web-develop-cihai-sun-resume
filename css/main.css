@@ -1,8 +1,7 @@
 #transform_board {
   height: 500px;
   background: gray;
-  position: relative;
-  padding: 0px !important; }
+  position: relative; }
 
 #my_name {
   color: white;
@@ -32,8 +31,7 @@
 #resumeBody {
   position: relative;
   background: gray;
-  z-index: 0;
-  padding: 0px !important; }
+  z-index: 0; }
   #resumeBody #my_experience {
     color: white;
     font-size: 30px;
@@ -57,8 +55,7 @@
 
 #mobile {
   position: relative;
-  height: 1000px;
-  padding: 0px !important; }
+  height: 1000px; }
   #mobile #my_projects {
     color: gray;
     font-size: 30px;
@@ -73,8 +70,7 @@
     position: relative;
     margin: 0 auto;
     width: 400px;
-    height: 1000px;
-    padding: 0px !important; }
+    height: 1000px; }
   #mobile .iphone-front, #mobile .iphone-back {
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;

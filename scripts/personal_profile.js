@@ -68,7 +68,7 @@ window.onload=function(){
   
   //generate cihai pixel image
   function cihai(){
-      var customX=window.innerWidth/3;
+      var customX=window.innerWidth/5;
       var customY=160;
 
       //print out "C"
@@ -169,7 +169,7 @@ window.onload=function(){
   
   //generate smile face image
   function smileFace(){
-      var customX=200+window.innerWidth/3;
+      var customX=200+window.innerWidth/5;
       var customY=70;
       
       for(var sx=0;sx<11;sx++){
