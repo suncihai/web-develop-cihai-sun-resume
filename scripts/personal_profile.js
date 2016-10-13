@@ -3,7 +3,6 @@ window.onload=function(){
   var transformBoard=document.getElementById('transform_board');
   var russiablock=document.getElementById('russiablock');
   var resume=document.getElementById('resumeBody');
-  var heart=document.getElementById('heart');
   var mobile=document.getElementById('mobile');
   var container=document.getElementsByClassName('container')[0];
   var homebtn=document.getElementById('homebtn');
@@ -239,7 +238,7 @@ window.onload=function(){
   resume.appendChild(overlap);
 
   //record click event coordinate and move the overlap
-  resume.onclick=function(e){
+  resume.onmouseover=function(e){
      e=e||window.event;
      var scrollY= (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
      var clickX=e.clientX;
@@ -261,14 +260,6 @@ window.onload=function(){
        clickY=resume.clientHeight-overlapRadius;
      }
      
-     if(clickX>600&&clickX<800&&clickY>700){
-       setTimeout(function(){
-         heart.className="heartShow";
-       },500);
-     }else{
-         heart.className="heartHide";
-     }
-
      overlap.style.top=clickY-overlapRadius+"px";
      overlap.style.left=clickX-overlapRadius+"px";
   }

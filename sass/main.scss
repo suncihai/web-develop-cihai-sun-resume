@@ -5,6 +5,13 @@
 	padding:0px !important;
 }
 
+#my_name{
+	color:white;
+	font-size:30px;
+	text-align:center;
+	height:40px;
+}
+
 #russiablock{
    position:relative;
    height:1000px;
@@ -21,7 +28,6 @@
    	  background:gray;
    	  color:white;
    }
-
    .textpiece{
    	 margin-left:14px;
    	 margin-top:10px
@@ -31,103 +37,52 @@
 #resumeBody{
 	position:relative;
 	background:gray;
-	height:1000px;
     z-index:0;
     padding:0px !important;
+    #my_experience{
+		color:white;
+		font-size:30px;
+		text-align:center;
+		height:40px;
+    }
     .resume{
-    	position:absolute;
     	color:gray;
     	z-index:10;
+    	font-size:20px;
+    	margin:0 5%;
+    	padding:20px;
     }
     #word1{
-    	width:300px;
-        font-size:32px;
-        left:20px;
-        top:150px;
     }
     #word2{
-        font-size:44px;
-        left:300px;
-        top:250px;
     }
     #word3{
-        font-size:42px;
-        left:300px;
-        top:450px;
     }
     #word4{
-        font-size:36px;
-        left:200px;
-        top:650px;
     }
     #word5{
-        font-size:46px;
-        left:34%;
-        top:800px;
-        z-index:10;
     }
-
     .circle{
-    	width:400px;
-    	height:400px;
-    	border-radius:400px;
+    	width:750px;
+    	height:750px;
+    	border-radius:200px;
     	background:white;
     	position:absolute;
     	left:0px;
     	top:0px;
     	z-index:5;
     }
-
-    #heart{
-    	position:absolute;
-    	left:30%;
-    	top:750px;
-    	z-index:6; 
-    }
-
-    .heartHide:before,.heartHide:after{
-        transition:ease 1s;
-		position: absolute;
-	    content: "";
-	    left: 150px;
-	    top: 0;
-	    background:gray;
-	    width: 150px;
-	    height: 240px;
-	    border-radius: 150px 150px 0 0;
-        transform: rotate(-45deg);
-        transform-origin: 0 100%;
-	}
-	.heartHide:after{
-		left: 0;
-	    transform: rotate(45deg);
-	    transform-origin :100% 100%;
-	}
-
-	.heartShow:before,.heartShow:after{
-		transition:ease 1s;
-		position: absolute;
-	    content: "";
-	    left: 150px;
-	    top: 0;
-	    background:red;
-	    width: 150px;
-	    height: 240px;
-	    border-radius: 150px 150px 0 0;
-        transform: rotate(-45deg);
-        transform-origin: 0 100%;
-	}
-	.heartShow:after{
-		left: 0;
-	    transform: rotate(45deg);
-	    transform-origin :100% 100%;
-	}
 }
 
 #mobile{
 	position:relative;
 	height:1000px;
 	padding:0px!important;
+	#my_projects{
+		font-size:30px;
+		text-align:center;
+		height:40px;
+	}
 	.container{
 		perspective:800px;
 		-webkit-perspective:800px;
@@ -155,7 +110,7 @@
 		height:800px;
 		position:absolute;
 		top:130px;
-		left:50px;
+		left:0px;
 		background:url(../images/iphone.png) no-repeat right center;
 		transition:0.8s;
 	}
@@ -277,7 +232,7 @@
 		cursor:pointer;
 	}
 	#homebtn_des{
-		font-size:20px;
+		font-size:25px;
 		text-align:center;
 		height:40px;
 	}
