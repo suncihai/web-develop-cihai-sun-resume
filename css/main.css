@@ -40,7 +40,9 @@
   #resumeBody .resume {
     color: gray;
     z-index: 10;
-    font-size: 20px; }
+    font-size: 20px;
+    padding: 20px;
+    margin: 0 2%; }
   #resumeBody .circle {
     width: 750px;
     height: 750px;
