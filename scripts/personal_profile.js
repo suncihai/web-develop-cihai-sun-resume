@@ -1,4 +1,5 @@
 window.onload=function(){
+  var originArr=[];
 	var shuffleArr=[];
   var transformBoard=document.getElementById('transform_board');
   var russiablock=document.getElementById('russiablock');
@@ -20,11 +21,12 @@ window.onload=function(){
   transformBoard.style.transition="ease 3s";
   
   //generate 67 basic pixels
-	for(var i=0;i<67;i++){
+	for(var i=0;i<70;i++){
 		var tmpPixel=document.createElement('div');
 		tmpPixel.setAttribute('id',"pixel"+(i+1));
 		tmpPixel.setAttribute('style',"position:absolute;width:20px;height:20px;background:white;top:'';left:''");
 		tmpPixel.style.transition="ease-in 3s";
+    originArr.push(tmpPixel);
 		shuffleArr.push(tmpPixel);
 		transformBoard.appendChild(tmpPixel);
 	}
@@ -34,10 +36,10 @@ window.onload=function(){
         var shuffleTimes=50+Math.ceil(Math.random()*20);
         var time=0;
         while(time<shuffleTimes){
-        	var random1=Math.floor(Math.random()*67);
+        	var random1=Math.floor(Math.random()*70);
         	var random2;
         	do{
-        		random2=Math.floor(Math.random()*67);
+        		random2=Math.floor(Math.random()*70);
         	}while(random2===random1);
         	swap(shuffleArr,random1,random2);
         	time++;
@@ -57,8 +59,10 @@ window.onload=function(){
      
      if(PixelChange){
          cihai();
+         changePixelSize(false);
      }else{
-         smileFace();
+         ProfileImage();
+         changePixelSize(true);
      }
      PixelChange=!PixelChange;
      setTimeout(ChangePixel,4000);
@@ -68,9 +72,9 @@ window.onload=function(){
   
   //generate cihai pixel image
   function cihai(){
-      var customX=window.innerWidth/5;
-      var customY=160;
-
+      var customX=window.innerWidth/4;
+      var customY=250;
+      
       //print out "C"
      for(var cx=0;cx<3;cx++){
         shuffleArr[cx].style.top=customY+"px";
@@ -92,6 +96,15 @@ window.onload=function(){
         shuffleArr[cx+9].style.top=customY+140+"px";
         shuffleArr[cx+9].style.left=customX+cx*20+"px";
      }
+     
+     shuffleArr[67].style.top=customY+"px";
+     shuffleArr[67].style.left=customX+60+"px";
+
+     shuffleArr[68].style.top=customY+140+"px";
+     shuffleArr[68].style.left=customX+60+"px";
+
+     shuffleArr[69].style.top=customY+70+"px";
+     shuffleArr[69].style.left=customX-60+"px";
 
      //print out first "I"
      for(var iy=0;iy<8;iy++){
@@ -167,67 +180,32 @@ window.onload=function(){
      }
   }
   
-  //generate smile face image
-  function smileFace(){
-      var customX=200+window.innerWidth/5;
+  //generate ProfileImage image
+  function ProfileImage(){
+      var customX=window.innerWidth/2.4;
       var customY=70;
       
-      for(var sx=0;sx<11;sx++){
-        shuffleArr[sx].style.top=customY+"px";
-        shuffleArr[sx].style.left=customX+sx*20+"px";
+      for(var x=0;x<originArr.length;x++){
+        originArr[x].style.top=customY+Math.floor((x/7))*50+"px";
+        originArr[x].style.left=customX+(x%7)*50+"px";
+        originArr[x].style.background="url(images/profile_tiles/"+(x+1)+".gif)";
       }
-     
-      for(var sx=0;sx<4;sx++){
-        shuffleArr[sx+11].style.top=customY+20+sx*20+"px";
-        shuffleArr[sx+11].style.left=customX-20-sx*20+"px";
-      }
+  }
 
-      for(var sx=0;sx<4;sx++){
-        shuffleArr[sx+15].style.top=customY+20+sx*20+"px";
-        shuffleArr[sx+15].style.left=customX+220+sx*20+"px";
-      }
-
-      for(var sy=0;sy<9;sy++){
-        shuffleArr[sy+19].style.top=customY+100+sy*20+"px";
-        shuffleArr[sy+19].style.left=customX-100+"px";
-      }
-
-      for(var sy=0;sy<9;sy++){
-        shuffleArr[sy+28].style.top=customY+100+sy*20+"px";
-        shuffleArr[sy+28].style.left=customX+300+"px";
-      }
-
-      for(var sx=0;sx<4;sx++){
-        shuffleArr[sx+37].style.top=customY+280+sx*20+"px";
-        shuffleArr[sx+37].style.left=customX-80+sx*20+"px";
-      }
-
-      for(var sx=0;sx<4;sx++){
-        shuffleArr[sx+41].style.top=customY+280+sx*20+"px";
-        shuffleArr[sx+41].style.left=customX+280-sx*20+"px";
-      }
-
-      for(var sx=0;sx<11;sx++){
-        shuffleArr[sx+45].style.top=customY+360+"px";
-        shuffleArr[sx+45].style.left=customX+sx*20+"px";
-      }
-
-      for(var sx=0;sx<7;sx++){
-        shuffleArr[sx+56].style.top=customY+300+"px";
-        shuffleArr[sx+56].style.left=customX+40+sx*20+"px";
-      }
-
-      shuffleArr[63].style.top=customY+280+"px";
-      shuffleArr[63].style.left=customX+20+"px";
-
-      shuffleArr[64].style.top=customY+280+"px";
-      shuffleArr[64].style.left=customX+180+"px";
-
-      shuffleArr[65].style.top=customY+100+"px";
-      shuffleArr[65].style.left=customX+20+"px";
-
-      shuffleArr[66].style.top=customY+100+"px";
-      shuffleArr[66].style.left=customX+160+"px";
+  function changePixelSize(value){
+     if(value){
+        for(var i=0;i<originArr.length;i++){
+          originArr[i].style.transition="ease-in 3s";
+          originArr[i].style.width="50px";
+          originArr[i].style.height="50px";
+        }
+     }else{
+        for(var i=0;i<shuffleArr.length;i++){
+          shuffleArr[i].style.transition="ease-in 3s";
+          shuffleArr[i].style.width="20px";
+          shuffleArr[i].style.height="20px";
+        }
+     }
   }
   
   //resume body,create a overlap object
