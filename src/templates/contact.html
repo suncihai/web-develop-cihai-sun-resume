@@ -1,1 +1,22 @@
-<div>Contact</div>
+<div class="col-xs-12 ">
+    <h3>My current address</h3>
+    <div id="map"></div>
+    <script>
+    function initMap() {
+        var myhome = {
+            lat: 40.744859,
+            lng: -73.881297
+        };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: myhome
+        });
+        var marker = new google.maps.Marker({
+            position: myhome,
+            map: map
+        });
+    }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAT0j1zGaphC05bZnyX85ZBOQb6JSKiQFE&callback=initMap">
+    </script>
+</div>
