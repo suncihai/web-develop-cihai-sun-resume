@@ -1,0 +1,47 @@
+body {
+  font-family: 'Ubuntu', sans-serif !important;
+  font-size: 1.5em; }
+  body .resume_header {
+    padding-top: 30px;
+    border-bottom: 1px lightgrey solid;
+    padding-bottom: 30px; }
+    body .resume_header > a {
+      margin-left: 8.33% !important; }
+      body .resume_header > a h1 {
+        font-size: 3em;
+        color: gray;
+        border-radius: 3px;
+        display: inline; }
+    body .resume_header ul {
+      margin-right: 8.33%;
+      padding-top: 15px; }
+      body .resume_header ul li {
+        font-size: 1.5em; }
+        body .resume_header ul li a {
+          color: gray;
+          border-radius: 3px; }
+          body .resume_header ul li a:hover {
+            color: #FC9F9E !important;
+            background-color: #FFFFFF; }
+  body .footer {
+    position: relative;
+    clear: both;
+    height: 50px;
+    width: 100%; }
+    body .footer p.copyright {
+      padding-left: 2%;
+      line-height: 40px;
+      font-size: 0.7em;
+      position: absolute;
+      width: 100%;
+      text-align: left;
+      bottom: 0; }
+    body .footer .social {
+      font-size: 19px;
+      float: right;
+      color: #fff;
+      padding-right: 30px;
+      /* width: 100%; */
+      height: 10px; }
+
+/*# sourceMappingURL=index.css.map */

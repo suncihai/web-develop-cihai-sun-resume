@@ -1,109 +1,70 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="scripts/personal_profile.js"></script>
-	<title>Cihai Sun Resume</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <title>Cihai Sun</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style/index.css">
+    <link rel="stylesheet" type="text/css" href="style/home.css">
+    <link rel="stylesheet" type="text/css" href="style/experience.css">
+    <link rel="stylesheet" type="text/css" href="style/projects.css">
 </head>
 
-<body>
-    <div class="row">
-    	<div id="transform_board">
-    	    <div id="my_name">My Name/Profile</div>
-        </div>
+<body ng-app='cihaisunApp'>
+    <div class="navbar resume_header navbar-default col-md-12">
+        <a class="navbar-brand" ui-sref="home">
+            <h1>Cihai Sun</h1>
+        </a>
+        <ul class="nav navbar-nav resume_header-navi pull-right">
+            <li id="test1" class="pull-left">
+                <a ui-sref="home" ui-sref-active="activeTab ">About</a>
+            </li>
+            <li class="pull-left">
+                <a ui-sref="experience" ui-sref-active="activeTab ">Experience</a>
+            </li>
+            <li class="pull-left">
+                <a ui-sref="projects" ui-sref-active="activeTab ">Projects</a>
+            </li>
+            <li class="pull-left">
+                <a ui-sref="contact" ui-sref-active="activeTab ">Contact</a>
+            </li>
+        </ul>
     </div>
-    <div class="row">
-    	<div class="col-sm-12" id="russiablock">
-            <p id="russiablock_des">My programming skills</p>
+    <ui-view>
+    </ui-view>
+    <div class="footer">
+        <div class="wrapper">
+            <p class="copyright">Copyright 2016 Cihai Sun.
+                <span class="social">
+                <a href="https://www.facebook.com/suncihai" targer="_blank" class="facebook">
+                    <img src="images/facebook.gif">
+                </a>
+                          
+                <a href="https://www.linkedin.com/in/cihai-sun-5620a375" targer="_blank" class="linkedin">
+                    <img src="images/linkedin.gif">
+                </a>
+                         
+                </span>
+            </p>
         </div>
-    </div>
-    <div id="resumeBody">
-        <div id="my_experience">My Experience/Education</div>
-        <div class="row">
-        	<div class="resume col-sm-12 col-md-4" id="word1">Two Red Beans,New York  Web/iOS developer(Internship)     Jan.2015-Aug.2015<br>
-    	       <ul>
-    	       	   <li>Make a proposal using vivid animation in PowerPoint</li>
-	               <li>Created and implemented a custom CSS grid system, with Bootstrap for mobile responsiveness.</li>
-	               <li>Edit images and gifs according to requirements using photoshop</li>
-	               <li>Convert photoshop layouts to web pages using HTML, CSS, and JavaScript</li>
-	               <li>Developed code for Shadowboxes, Slider Carousals, Validation</li>
-	               <li>Fixed front end bugs (HTML, CSS, Javascript errors (jQuery), using Sinon.js<br>/jasmine to do unit testing.</li>
-	               <li>Design the UI layout in Storyboard with Xcode</li>
-	               <li>Implement application of swiping pictures like tinder using Swift.</li> 
-	               <li>Design a two-minute animation for marketing advertisement use<br> to attract more users to our web page and mobile apps</li>
-    	       </ul>
-        </div> 
-    	<div class="resume col-sm-12 col-md-4" id="word2">
-    		Dynamic Urban Technologies,New York Web developer Nov. 2013-May.2014
-    		<ul>
-    			<li>Enhance the display of web page by adding animations using CSS/Sass</li>
-                <li>Created and maintained the front-end standards document and oversaw production of Javascript, HTML and CSS</li>
-                <li>Implement a customized directive of modal that can edit user's profile</li>
-               <li>Implement synchronizing search function by using Angular.js framework<br>
-                gather feedbacks from web users and report to marketing team</li> 
-    		</ul>       
-    	</div>
-    	<div class="resume col-sm-12 col-md-4" id="word3">Nikken Sekkei,Shanghai Assistant Project Manager Feb. 2011-Jun.2013
-	    	<ul>
-	    		<li>Cultivate and maintain relationships with clients</li>
-	    		<li>Communicate client expectations to designers</li>
-	    		<li>Supervise designers and subcontractors to meet project deadlines</li>
-	    	</ul>      
-         </div>
-        </div>
-        <div class="row">
-        	<div class="resume col-sm-12 col-md-offset-1 col-md-4" id="word4">APC,Tokyo&Shanghai Cost Engineer</br>Jul. 2008-Jan. 2011
-		    	<ul>
-		    		<li>Calculate the cost of construction project</li>
-		    		<li>Analyze results of projects and submit the report to clients</li>
-		    	</ul> 
-	        </div>
-	    	<div class="resume col-sm-12 col-md-offset-1 col-md-4" id="word5">Education</br>
-		    	<ul>
-		    		<li>M.S. Computer Science,  George Washington University, DC
-					Sep.2014-May.2016</li>
-		    		<li>B.E. Civil Engineering, Tongji University, Shanghai</br>             
-					Sep.2004-Jun. 2008</li>
-		    	</ul>
-			</div>
-        </div>
-    </div>
-    <div class="row">
-    	<div class="col-sm-12" id="mobile">
-	    <div id="my_projects">My projects</div>
-	    	<div class="container">
-	    		<div class="iphone-back"></div>
-	    		<div class="iphone-front">
-	    			<div id="outer-container">
-	    				<div id="inner-container">
-	    					<div id="content">
-	                            <div id="newsApp">
-	                                <div id="newsApp_icon">
-	            					    <div class="news" id="movie">Movie</div>
-	            						<div class="news" id="news1">Politics</div>
-	            						<div class="news" id="shopping">Shopping</div>
-	                                </div>
-	        						<div class="news" id="news2">Stars</div>
-	        						<div class="news" id="news3">Sports</div>
-	        						<div class="news" id="news4">Travel</div>
-	        						<div class="news" id="news5">Entertainment</div>
-	        						<div class="news" id="news6">Financial</div>
-	                            </div>
-	                            <div id="minionsApp"></div>
-	                            <div id="minionsApp_icon" style="display:none"><img src="images/cone.png"/>Under construction<img src="images/cone.png"/></div>
-	                            <div id="doraemongameApp"></div>
-	                            <div id="doraemongameApp_icon"></div>
-	    					</div>
-	    				</div>
-	    			</div>
-	                <div id="homebtn"></div>
-	    		</div>
-	    	</div>
-	        <div id="homebtn_des">Press home button and try other apps!</div>
-	    </div>
     </div>
 </body>
-</html>
+
+<script src="lib/jquery-3.1.1.min.js "></script>
+<script src="lib/angular.min.js "></script>
+<script src="lib/angular-ui-router.min.js "></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+<script src="lib/ui-bootstrap.js "></script>
+<script src="lib/ui-bootstrap-tpls.js "></script>
+<!-- Modules -->
+<script src="src/js/cihaisun.module.js"></script>
+<!-- Routes -->
+<script src="src/routes.js"></script>
+<script src="src/js/projects.js"></script>
