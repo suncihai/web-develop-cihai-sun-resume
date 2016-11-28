@@ -2,9 +2,13 @@ body {
   font-family: 'Ubuntu', sans-serif !important;
   font-size: 1.5em; }
   body .resume_header {
+    transition: ease 3s;
+    height: 50vw;
     padding-top: 30px;
     border-bottom: 1px lightgrey solid;
-    padding-bottom: 30px; }
+    padding-bottom: 30px;
+    background: url(../images/newyork.jpg) no-repeat center;
+    background-size: cover; }
     body .resume_header > a {
       margin-left: 8.33% !important; }
       body .resume_header > a h1 {
@@ -12,16 +16,18 @@ body {
         color: gray;
         border-radius: 3px;
         display: inline; }
+        body .resume_header > a h1:hover {
+          color: white; }
     body .resume_header ul {
       margin-right: 8.33%;
       padding-top: 15px; }
       body .resume_header ul li {
         font-size: 1.5em; }
         body .resume_header ul li a {
-          color: gray;
+          color: gray !important;
           border-radius: 3px; }
           body .resume_header ul li a:hover {
-            color: #FC9F9E !important;
+            color: white !important;
             background-color: #FFFFFF; }
   body .footer {
     position: relative;
