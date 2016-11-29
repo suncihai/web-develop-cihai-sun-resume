@@ -21,26 +21,30 @@
 
 <body ng-app='cihaisunApp'>
     <div class="navbar resume_header navbar-default col-md-12">
-        <a class="navbar-brand" ui-sref="home">
-            <h1>Cihai Sun</h1>
-        </a>
-        <ul class="nav navbar-nav resume_header-navi pull-right">
-            <li id="test1" class="pull-left">
-                <a ui-sref="home" ui-sref-active="activeTab" id="home_label">About</a>
-            </li>
-            <li class="pull-left">
-                <a ui-sref="experience" ui-sref-active="activeTab" id="experience_label">Experience</a>
-            </li>
-            <li class="pull-left">
-                <a ui-sref="projects" ui-sref-active="activeTab" id="projects_label">Projects</a>
-            </li>
-            <li class="pull-left">
-                <a ui-sref="apps" ui-sref-active="activeTab" id="apps_label">Apps</a>
-            </li>
-            <li class="pull-left">
-                <a ui-sref="contact" ui-sref-active="activeTab" id="contact_label">Contact</a>
-            </li>
-        </ul>
+        <div class="row">
+            <a class="navbar-brand" ui-sref="home">
+                <h1>Cihai Sun</h1>
+            </a>
+        </div>
+        <div class="row">
+            <ul class="resume_header-navi">
+                <li class="col-sm-offset-1 col-sm-2 col-xs-4">
+                    <a ui-sref="home" ui-sref-active="activeTab" id="home_label">About</a>
+                </li>
+                <li class="col-sm-2 col-xs-4">
+                    <a ui-sref="experience" ui-sref-active="activeTab" id="experience_label">Experience</a>
+                </li>
+                <li class="col-sm-2 col-xs-4">
+                    <a ui-sref="projects" ui-sref-active="activeTab" id="projects_label">Projects</a>
+                </li>
+                <li class="col-sm-2 col-xs-4">
+                    <a ui-sref="apps" ui-sref-active="activeTab" id="apps_label">Apps</a>
+                </li>
+                <li class="col-sm-2 col-xs-4">
+                    <a ui-sref="contact" ui-sref-active="activeTab" id="contact_label">Contact</a>
+                </li>
+            </ul>
+        </div>
     </div>
     <ui-view>
     </ui-view>
