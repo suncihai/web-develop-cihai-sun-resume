@@ -28,6 +28,12 @@
     	 	url: '/projects',
     	 	templateUrl: 'src/templates/projects.html'
     	 })
+
+         // projects part
+         .state('apps',{
+            url: '/apps',
+            templateUrl: 'src/templates/apps.html'
+         })
         
          // contact part
          .state('contact',{

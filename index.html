@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="style/home.css">
     <link rel="stylesheet" type="text/css" href="style/experience.css">
     <link rel="stylesheet" type="text/css" href="style/projects.css">
+    <link rel="stylesheet" type="text/css" href="style/apps.css">
     <link rel="stylesheet" type="text/css" href="style/contact.css">
 </head>
 
@@ -34,6 +35,9 @@
                 <a ui-sref="projects" ui-sref-active="activeTab" id="projects_label">Projects</a>
             </li>
             <li class="pull-left">
+                <a ui-sref="apps" ui-sref-active="activeTab" id="apps_label">Apps</a>
+            </li>
+            <li class="pull-left">
                 <a ui-sref="contact" ui-sref-active="activeTab" id="contact_label">Contact</a>
             </li>
         </ul>
@@ -42,7 +46,7 @@
     </ui-view>
     <div class="footer">
         <div class="wrapper">
-            <p class="copyright">Copyright 2016 Cihai Sun.
+            <p class="copyright">@Copyright 2016 Cihai Sun.
                 <span class="social">
                 <a href="https://www.facebook.com/suncihai" targer="_blank" class="facebook">
                     <img src="images/facebook.gif">
@@ -70,4 +74,5 @@
 <!-- Routes -->
 <script src="src/routes.js"></script>
 <script src="src/js/projects.js"></script>
+<script src="src/js/apps.js"></script>
 <script src="src/js/index.js"></script>

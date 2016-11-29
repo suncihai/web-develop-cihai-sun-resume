@@ -4,16 +4,16 @@ body {
   body .resume_header {
     transition: ease 3s;
     height: 50vw;
-    padding-top: 30px;
+    padding-top: 50px;
     border-bottom: 1px lightgrey solid;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
     background: url(../images/newyork.jpg) no-repeat center;
     background-size: cover; }
     body .resume_header > a {
       margin-left: 8.33% !important; }
       body .resume_header > a h1 {
         font-size: 3em;
-        color: gray;
+        color: white;
         border-radius: 3px;
         display: inline; }
         body .resume_header > a h1:hover {
