@@ -1,0 +1,76 @@
+.container{
+    perspective:800px;
+    -webkit-perspective:800px;
+    -moz-perspective:800px;
+    -ms-perspective: 800px;
+    -o-perspective:800px;
+    position:relative;
+    margin:0 auto;
+    height:80vw;
+  }
+  .selfie-front,.selfie-back{
+    transform-style:preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style:preserve-3d;
+    -ms-transform-style:none;
+    -o-transform-style:preserve-3d;
+    backface-visibility:hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+    -o-backface-visibility:hidden;
+    width:80vw;
+    height:80vw;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    background:url(../images/cihaisun.jpg) no-repeat right center;
+    background-size:cover;
+    border-radius:800px;
+    transition:0.8s;
+  }
+
+  .selfie-front{
+    transform:rotateY(180deg);
+    -webkit-transform:rotateY(180deg);
+    -moz-transform:rotateY(180deg);
+    -ms-transform:none;
+    -o-transform:rotateY(180deg);
+    background-position:left center;
+  }
+
+  .container:hover .selfie-back{
+    transform:rotateY(180deg);
+    -webkit-transform:rotateY(180deg);
+    -moz-transform:rotateY(180deg);
+    -ms-transform:none;
+    -o-transform:rotateY(180deg);
+  }
+
+  .container:hover .selfie-front{
+    transform:rotateY(360deg);
+    -webkit-transform:rotateY(360deg);
+    -moz-transform:rotateY(360deg);
+    -ms-transform:none;
+    -o-transform:rotateY(360deg);
+  }
+
+.resume_home-content {
+    font-size: 1.2em;
+    padding-top: 20px;
+    img {
+        width: 1em;
+        height: 1em;
+    }
+}
+
+.desbox{
+  padding:10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gray;
+  margin:10px auto;
+  &:hover{
+    opacity: 0.7;
+    background: #ddd;
+  }
+}
