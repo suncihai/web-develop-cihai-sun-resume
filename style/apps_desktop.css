@@ -27,7 +27,8 @@
   left: 10px;
   top: 20px;
   background: url(../images/news_icon.png);
-  background-size: cover; }
+  background-size: cover;
+  border-radius: 10px; }
 #mobile #minionsApp {
   position: absolute;
   width: 0px;

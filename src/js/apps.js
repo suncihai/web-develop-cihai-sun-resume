@@ -19,7 +19,7 @@
         var closeApp=true;
         var appOn=0;
         
-        newsApp.style.transition="ease 1.5s";
+        newsApp.style.transition="ease 1s";
         mobile.style.transition="ease 1s";
         container.style.transition="ease 1s";
         minionsApp.style.transition="ease 1s";
@@ -107,7 +107,7 @@
                   doraemongameApp.style.height="229px";
                   doraemongameApp.style.left="-50px";
                   doraemongameApp.style.top="-53px";
-                  doraemongameApp.innerHTML='<object type="text/html" width="229px" height="128px" data="http://suncihai.x10host.com/doraemon_game_mobile/doraemon_game_mobile.html"></object>';
+                  doraemongameApp.innerHTML='<object type="text/html" width="229px" height="128px" data="http://suncihai.x10host.com/doraemon_game_mobile_small/doraemon_game_mobile.html"></object>';
               }else{
                   doraemongameApp.style.width="320px";
                   doraemongameApp.style.height="567px";
