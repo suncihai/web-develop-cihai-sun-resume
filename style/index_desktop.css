@@ -27,11 +27,11 @@ body {
         text-align: center;
         font-size: 24px; }
         body .resume_header ul li a {
-          color: gray !important;
+          color: white !important;
           border-radius: 3px;
           text-decoration: none; }
           body .resume_header ul li a:hover {
-            color: white !important; }
+            color: #44a3d3 !important; }
   body .footer {
     position: relative;
     clear: both;
