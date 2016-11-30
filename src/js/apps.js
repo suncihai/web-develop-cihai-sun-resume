@@ -12,15 +12,14 @@
         var content=document.getElementById('content');
         var inner_container=document.getElementById('inner-container');
         var newsApp=document.getElementById('newsApp');
-        var newsApp_icon=document.getElementById('newsApp_icon');
         var minionsApp=document.getElementById('minionsApp');
         var minionsApp_icon=document.getElementById('minionsApp_icon');
         var doraemongameApp=document.getElementById('doraemongameApp');
         var doraemongameApp_icon=document.getElementById('doraemongameApp_icon');
         var closeApp=true;
         var appOn=0;
-
-        newsApp_icon.style.transition="ease 1s";
+        
+        newsApp.style.transition="ease 1.5s";
         mobile.style.transition="ease 1s";
         container.style.transition="ease 1s";
         minionsApp.style.transition="ease 1s";
@@ -31,8 +30,10 @@
         
         homebtn.onclick=function(){
             closeApp=true;
+            newsApp.style.display="block";
             switch(appOn){
               case 1:
+                  newsApp.innerHTML="";
                   break;
               case 2:
                   doraemongameApp.style.width="0px";
@@ -45,21 +46,60 @@
               default:
                   break;
             }
-
+            
             inner_container.style.overflow="hidden";
             setTimeout(function(){
-                newsApp_icon.style.display="block";
+                if(window.innerWidth<1000){
+                   newsApp.style.width="28px";
+                   newsApp.style.height="28px";
+                   newsApp.style.left="3px";
+                   newsApp.style.top="7px";
+                   newsApp.style.background="url(../images/news_icon.png)";
+                   newsApp.style.backgroundSize="cover";
+                }else{
+                   newsApp.style.width="70px";
+                   newsApp.style.height="70px";
+                   newsApp.style.left="10px";
+                   newsApp.style.top="20px";
+                   newsApp.style.background="url(../images/news_icon.png)";
+                   newsApp.style.backgroundSize="cover";
+                }
                 minionsApp_icon.style.display="block";
                 doraemongameApp_icon.style.display="block";
             },100);
 
             appOn=0;
         }
+        
+        newsApp.onclick=function(){
+           appOn=1;
+           if(closeApp){
+              minionsApp_icon.style.display="none";
+              doraemongameApp_icon.style.display="none";
+              if(window.innerWidth<1000){
+                  newsApp.style.width="128px";
+                  newsApp.style.height="229px";
+                  newsApp.style.left="0px";
+                  newsApp.style.top="0px";
+                  newsApp.style.backgroundSize="cover";
+                  newsApp.innerHTML='<object type="text/html" width="128px" height="229px" data="http://www.cnn.com"></object>';
+              }else{
+                  newsApp.style.width="320px";
+                  newsApp.style.height="567px";
+                  newsApp.style.left="0px";
+                  newsApp.style.top="0px";
+                  newsApp.style.backgroundSize="cover";
+                  newsApp.innerHTML='<object type="text/html" width="320px" height="567px" data="http://www.cnn.com"></object>';
+              }
+              inner_container.style.overflowY="scroll";
+          }
+          closeApp=false;
+        }
 
     	  doraemongameApp_icon.onclick=function(){
            appOn=2;
            if(closeApp){
-              newsApp_icon.style.display="none";
+              newsApp.style.display="none";
               minionsApp_icon.style.display="none";
               doraemongameApp_icon.style.display="none";
               if(window.innerWidth<1000){

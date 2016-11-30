@@ -27,16 +27,12 @@
 	}
 	#newsApp{
 		position:absolute;
-		width:0px;
-		height:0px;
-	}
-	#newsApp_icon{
-		position:absolute;
 		width:70px;
 		height:70px;
 		left:10px;
 		top:20px;
 		background:url(../images/news_icon.png);
+		background-size:cover;
 	}
 	#minionsApp{
 		position:absolute;

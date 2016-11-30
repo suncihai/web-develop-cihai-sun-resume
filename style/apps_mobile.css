@@ -23,10 +23,6 @@
   height: 229px; }
 #mobile #newsApp {
   position: absolute;
-  width: 0px;
-  height: 0px; }
-#mobile #newsApp_icon {
-  position: absolute;
   width: 28px;
   height: 28px;
   left: 3px;
