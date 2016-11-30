@@ -34,6 +34,12 @@
             url: '/apps',
             templateUrl: 'src/templates/apps.html'
          })
+
+         // test part
+         .state('test',{
+            url: '/apps/test',
+            templateUrl: 'src/templates/test.html'
+         })
         
          // contact part
          .state('contact',{

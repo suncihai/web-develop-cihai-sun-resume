@@ -65,8 +65,20 @@
   top: 7px;
   background: url(../images/doraemongame_icon.png);
   background-size: cover; }
-#mobile #doraemongameApp_icon:hover {
-  cursor: pointer; }
+#mobile #blackjackApp {
+  position: absolute;
+  width: 0px;
+  height: 0px; }
+#mobile #blackjackApp_icon {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  left: 96px;
+  top: 7px;
+  background: url(../images/blackjack_icon.png);
+  background-size: cover; }
+  #mobile #blackjackApp_icon:hover {
+    cursor: pointer; }
 #mobile #homebtn {
   position: absolute;
   left: 63px;

@@ -29,7 +29,7 @@
 		position:absolute;
 		width:70px;
 		height:70px;
-		left:10px;
+		left:7px;
 		top:20px;
 		background:url(../images/news_icon.png);
 		background-size:cover;
@@ -44,7 +44,7 @@
 		position:absolute;
 		width:70px;
 		height:70px;
-		left:90px;
+		left:84px;
 		top:20px;
 		background:url(../images/minions_icon.png);
 		&:hover{
@@ -70,15 +70,28 @@
 		position:absolute;
 		width:70px;
 		height:70px;
-		left:170px;
+		left:161px;
 		top:20px;
 		background:url(../images/doraemongame_icon.png);
 		&:hover{
 			cursor: pointer;
 		}
 	}
-	#doraemongameApp_icon:hover{
-		cursor:pointer;
+	#blackjackApp{
+		position:absolute;
+		width:0px;
+		height:0px;
+	}
+	#blackjackApp_icon{
+		position:absolute;
+		width:70px;
+		height:70px;
+		left:238px;
+		top:20px;
+		background:url(../images/blackjack_icon.png);
+		&:hover{
+			cursor: pointer;
+		}
 	}
 	#homebtn{
 		position:absolute;

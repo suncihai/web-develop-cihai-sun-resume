@@ -16,6 +16,8 @@
         var minionsApp_icon=document.getElementById('minionsApp_icon');
         var doraemongameApp=document.getElementById('doraemongameApp');
         var doraemongameApp_icon=document.getElementById('doraemongameApp_icon');
+        var blackjackApp=document.getElementById('blackjackApp');
+        var blackjackApp_icon=document.getElementById('blackjackApp_icon');
         var closeApp=true;
         var appOn=0;
         
@@ -25,6 +27,8 @@
         minionsApp.style.transition="ease 1s";
         doraemongameApp.style.transition="ease 1s";
         doraemongameApp_icon.style.transition="ease 1s";
+        blackjackApp.style.transition="ease 1s";
+        blackjackApp_icon.style.transition="ease 1s";
 
         $('#minionsApp_icon').hover(function(){$('#minionsApp_coming').css("display","block")},function(){$('#minionsApp_coming').css("display","none")});
         
@@ -42,6 +46,14 @@
                   doraemongameApp.innerHTML="";
                   container.style.transform="rotate(0deg)";
                   doraemongameApp.style.transform="rotate(0deg)";
+                  break;
+              case 3:
+                  blackjackApp.style.width="0px";
+                  blackjackApp.style.height="0px";
+                  blackjackApp.style.background="";
+                  blackjackApp.innerHTML="";
+                  container.style.transform="rotate(0deg)";
+                  blackjackApp.style.transform="rotate(0deg)";
                   break;
               default:
                   break;
@@ -66,6 +78,7 @@
                 }
                 minionsApp_icon.style.display="block";
                 doraemongameApp_icon.style.display="block";
+                blackjackApp_icon.style.display="block";
             },100);
 
             appOn=0;
@@ -76,6 +89,7 @@
            if(closeApp){
               minionsApp_icon.style.display="none";
               doraemongameApp_icon.style.display="none";
+              blackjackApp_icon.style.display="none";
               if(window.innerWidth<1000){
                   newsApp.style.width="128px";
                   newsApp.style.height="229px";
@@ -102,6 +116,7 @@
               newsApp.style.display="none";
               minionsApp_icon.style.display="none";
               doraemongameApp_icon.style.display="none";
+              blackjackApp_icon.style.display="none";
               if(window.innerWidth<1000){
                   doraemongameApp.style.width="128px";
                   doraemongameApp.style.height="229px";
@@ -117,6 +132,32 @@
               }
               container.style.transform="rotate(-90deg)";
               doraemongameApp.style.transform="rotate(90deg)";
+          }
+          closeApp=false;
+        }
+
+        blackjackApp_icon.onclick=function(){
+           appOn=3;
+           if(closeApp){
+              newsApp.style.display="none";
+              minionsApp_icon.style.display="none";
+              doraemongameApp_icon.style.display="none";
+              blackjackApp_icon.style.display="none";
+              if(window.innerWidth<1000){
+                  blackjackApp.style.width="128px";
+                  blackjackApp.style.height="229px";
+                  blackjackApp.style.left="-50px";
+                  blackjackApp.style.top="-53px";
+                  blackjackApp.innerHTML='<object type="text/html" width="229px" height="128px" data="http://suncihai.x10host.com/blackjack_mobile_small/blackjack_mobile.html"></object>';
+              }else{
+                  blackjackApp.style.width="344px";
+                  blackjackApp.style.height="567px";
+                  blackjackApp.style.left="-134px";
+                  blackjackApp.style.top="-112px";
+                  blackjackApp.innerHTML='<object type="text/html" width="567px" height="344px" data="http://suncihai.x10host.com/blackjack_mobile/blackjack_mobile.html"></object>';
+              }
+              container.style.transform="rotate(-90deg)";
+              blackjackApp.style.transform="rotate(90deg)";
           }
           closeApp=false;
         }
