@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,78 +8,27 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <!-- Latest compiled and minified JavaScript -->
-    <title>Cihai Sun</title>
+    <title>LoveDiary</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" media="(max-width:1000px)" href="style/index_mobile.css"/>
-    <link rel="stylesheet" media="(min-width:1000px)" href="style/index_desktop.css"/>
-    <link rel="stylesheet" media="(max-width:1000px)" href="style/home_mobile.css"/>
-    <link rel="stylesheet" media="(min-width:1000px)" href="style/home_desktop.css"/>
-    <link rel="stylesheet" media="(max-width:1000px)" href="style/experience_mobile.css"/>
-    <link rel="stylesheet" media="(min-width:1000px)" href="style/experience_desktop.css"/>
-    <link rel="stylesheet" type="text/css" href="style/projects.css">
-    <link rel="stylesheet" media="(max-width:1000px)" href="style/apps_mobile.css"/>
-    <link rel="stylesheet" media="(min-width:1000px)" href="style/apps_desktop.css"/>
-    <link rel="stylesheet" type="text/css" href="style/contact.css">
 </head>
 
-<body ng-app='cihaisunApp'>
-    <div class="navbar resume_header navbar-default col-md-12">
-        <div class="row">
-            <a class="navbar-brand" ui-sref="home">
-                <h1>Cihai Sun</h1>
-            </a>
+<body style="background:url(images/background.png);background-size:cover;">
+    <div id="shelter">
+        <div id="shelter_above" class="shelters">
+            <div id="shelter_above_board"></div>
         </div>
-        <div class="row">
-            <ul class="resume_header-navi">
-                <li class="col-sm-offset-1 col-sm-2 col-xs-4">
-                    <a ui-sref="home" ui-sref-active="activeTab" id="home_label">About</a>
-                </li>
-                <li class="col-sm-2 col-xs-4">
-                    <a ui-sref="experience" ui-sref-active="activeTab" id="experience_label">Experience</a>
-                </li>
-                <li class="col-sm-2 col-xs-4">
-                    <a ui-sref="projects" ui-sref-active="activeTab" id="projects_label">Projects</a>
-                </li>
-                <li class="col-sm-2 col-xs-4">
-                    <a ui-sref="apps" ui-sref-active="activeTab" id="apps_label">Apps</a>
-                </li>
-                <li class="col-sm-2 col-xs-4">
-                    <a ui-sref="contact" ui-sref-active="activeTab" id="contact_label">Contact</a>
-                </li>
-            </ul>
+        <div id="shelter_middle" class="shelters">
+            <div id="shelter_middle_board"></div>
         </div>
-    </div>
-    <ui-view>
-    </ui-view>
-    <div class="footer">
-        <div class="wrapper">
-            <p class="copyright">@Copyright 2016 Cihai Sun.
-                <span class="social">
-                <a href="https://www.facebook.com/suncihai" targer="_blank" class="facebook">
-                    <img src="images/facebook.gif">
-                </a>
-                          
-                <a href="https://www.linkedin.com/in/cihai-sun-5620a375" targer="_blank" class="linkedin">
-                    <img src="images/linkedin.gif">
-                </a>
-                         
-                </span>
-            </p>
+        <div id="shelter_below" class="shelters">
+            <div id="shelter_below_board"></div>
         </div>
     </div>
 </body>
 
 <script src="lib/jquery-3.1.1.min.js "></script>
-<script src="lib/angular.min.js "></script>
-<script src="lib/angular-ui-router.min.js "></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
-<script src="lib/ui-bootstrap.js "></script>
-<script src="lib/ui-bootstrap-tpls.js "></script>
-<script src="http://james.padolsey.com/demos/grayscale/grayscale.js"></script>
 <!-- Modules -->
-<script src="src/js/cihaisun.module.js"></script>
-<!-- Routes -->
-<script src="src/routes.js"></script>
-<script src="src/js/projects.js"></script>
 <script src="src/js/apps.js"></script>
-<script src="src/js/index.js"></script>
+<!-- Routes -->

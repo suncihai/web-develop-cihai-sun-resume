@@ -1,56 +1,32 @@
-body {
-  font-family: 'Ubuntu', sans-serif !important;
-  font-size: 1.5em; }
-  body .resume_header {
-    transition: ease 3s;
-    height: 55vw;
-    padding-top: 50px;
-    border-bottom: 1px lightgrey solid;
-    padding-bottom: 50px;
-    background: url(../images/newyork.jpg) no-repeat center;
-    background-size: cover; }
-    body .resume_header > div > a {
-      margin-left: 8.33% !important; }
-      body .resume_header > div > a h1 {
-        font-size: 3em;
-        color: white;
-        border-radius: 3px;
-        display: inline; }
-        body .resume_header > div > a h1:hover {
-          color: white; }
-    body .resume_header ul {
-      margin-top: 40px;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      list-style: none; }
-      body .resume_header ul li {
-        text-align: center;
-        font-size: 18px; }
-        body .resume_header ul li a {
-          color: white !important;
-          border-radius: 3px;
-          text-decoration: none; }
-          body .resume_header ul li a:hover {
-            color: #44a3d3 !important; }
-  body .footer {
-    position: relative;
-    clear: both;
-    height: 50px;
-    width: 100%; }
-    body .footer p.copyright {
-      padding-left: 2%;
-      line-height: 40px;
-      font-size: 0.7em;
-      position: absolute;
-      width: 100%;
-      text-align: left;
-      bottom: 0; }
-    body .footer .social {
-      font-size: 19px;
-      float: right;
-      color: #fff;
-      padding-right: 30px;
-      /* width: 100%; */
-      height: 10px; }
+#shelter{
+	height:600px;
+}
 
-/*# sourceMappingURL=index_mobile.css.map */
+.shelters{
+	height:200px;
+	position:relative;
+}
+
+#shelter_above_board{
+	width:100%;
+	height:25px;
+	background: url(../images/shelter_above.png) center no-repeat;
+	position:absolute;
+	bottom:10px;
+}
+
+#shelter_middle_board{
+	width:100%;
+	height:25px;
+	background: url(../images/shelter_middle.png) center no-repeat;
+	position:absolute;
+	bottom:10px;
+}
+
+#shelter_below_board{
+	width:100%;
+	height:25px;
+	background: url(../images/shelter_below.png) center no-repeat;
+	position:absolute;
+	bottom:10px;
+}
