@@ -1,10 +1,51 @@
 #shelter{
 	height:600px;
+	margin:0 auto;
 }
 
 .shelters{
-	height:150px;
+	height:120px;
 	position:relative;
+}
+
+#eye_makeup{
+	width:14px;
+	height:105px;
+	background: url(../images/eye_makeup.png) center no-repeat;
+	background-size:cover;
+	position:absolute;
+	bottom:25px;
+	right:120px;
+}
+
+#lipstick{
+	width:19px;
+	height:78px;
+	background: url(../images/lipstick.png) center no-repeat;
+	background-size:cover;
+	position:absolute;
+	bottom:25px;
+	right:100px;
+}
+
+#diarybook{
+	width:67px;
+	height:55px;
+	background: url(../images/diary_book.png) center no-repeat;
+	background-size:cover;
+	position:absolute;
+	bottom:25px;
+	left:100px;
+}
+
+#locker{
+	width:43px;
+	height:59px;
+	background: url(../images/locker.png) center no-repeat;
+	background-size:cover;
+	position:absolute;
+	bottom:25px;
+	right:100px;
 }
 
 #memo_rope{
@@ -41,7 +82,7 @@
 
 #shelter_above_board{
 	width:100%;
-	height:25px;
+	height:19px;
 	background: url(../images/shelter_above.png) center no-repeat;
 	position:absolute;
 	bottom:10px;
@@ -49,7 +90,7 @@
 
 #shelter_middle_board{
 	width:100%;
-	height:25px;
+	height:19px;
 	background: url(../images/shelter_middle.png) center no-repeat;
 	position:absolute;
 	bottom:10px;
@@ -57,7 +98,7 @@
 
 #shelter_below_board{
 	width:100%;
-	height:25px;
+	height:19px;
 	background: url(../images/shelter_below.png) center no-repeat;
 	position:absolute;
 	bottom:10px;
