@@ -103,3 +103,129 @@
 	position:absolute;
 	bottom:10px;
 }
+
+.diary_notes{
+	width:85%;
+	height:auto;
+	margin:0 auto;
+	border-radius:5px;
+	box-shadow:0 5px 10px gray;
+	background:#f7da88;
+	padding:10px;
+	margin-top:20px;
+}
+
+h3{
+	margin-top:0;
+}
+
+#diaryhint{
+	background:#f7da88;
+	width:150px;
+	height:80px;
+	font-size:15px;
+	position:absolute;
+	left:70px;
+	bottom:-60px;
+	padding:5px;
+	border-radius:5px;
+	box-shadow:0 4px 5px gray;
+}
+
+#diary_enter{
+   width:110px;
+   height:50px;
+   position:absolute;
+   left:180px;
+   bottom:35px;
+}
+
+#enterdiarybtn,#backtohomebtn1,#backtohomebtn2,#enterlockerbtn{
+	width:50px;
+	height:40px;
+	border-radius:5px;
+	background:#f7da88;
+}
+
+#backtohomebtn1{
+	margin-top:20px;
+	margin-left:26px;
+}
+
+#lockerhint{
+	background:#f7da88;
+	width:150px;
+	height:80px;
+	font-size:15px;
+	position:absolute;
+	right:70px;
+	bottom:-60px;
+	padding:5px;
+	border-radius:5px;
+	box-shadow:0 4px 5px gray;
+}
+
+#memo_exp{
+    background:#f7da88;
+	width:150px;
+	font-size:15px;
+	position:absolute;
+	left:40px;
+	top:10px;
+	padding:5px;
+	border-radius:5px;
+	box-shadow:0 4px 5px gray;
+}
+
+#makeup_exp{
+    background:#f7da88;
+	width:120px;
+	font-size:15px;
+	position:absolute;
+	left:100px;
+	top:0px;
+	padding:5px;
+	border-radius:5px;
+	box-shadow:0 4px 5px gray;
+}
+
+#locker_enter{
+   width:150px;
+   height:70px;
+   position:absolute;
+   left:80px;
+   bottom:35px;
+}
+
+#password{
+   width:60px;
+   padding:3px;
+   margin-bottom:10px;
+}
+
+#enterlockerbtn{
+   margin:0 auto;
+}
+
+#backtohomebtn2{
+	margin-top:20px;
+	margin-left:26px;
+}
+
+#lock_content{
+	text-align:center;
+	font-size:36px;
+	font-weight:bold;
+}
+
+#lock_notes{
+	text-align:center;
+}
+
+#cry_gif{
+	width:150px;
+	height:146px;
+	background:url(../images/cry.gif) center no-repeat;
+	background-size:cover;
+	margin:0 auto;
+}

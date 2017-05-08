@@ -14,23 +14,62 @@
 </head>
 
 <body style="background:url(images/background.png);background-size:cover;">
-    <div id="memo_rope">
-        <div id="memo1"></div>
-        <div id="memo2"></div>
+    <div id="homebody">
+        <div id="memo_rope">
+            <div id="memo1" class="memos"></div>
+            <div id="memo2" class="memos"></div>
+            <div id="memo_exp" style="display:none;">
+                以后便条打算写一些提醒宝宝的生活用语：吃药啊，喝粥啊，balabala
+            </div>
+        </div>
+        <div id="shelter">
+            <div id="shelter_above" class="shelters">
+                <div id="shelter_above_board"></div>
+                <div id="eye_makeup" class="makeups"></div>
+                <div id="lipstick" class="makeups"></div>
+                <div id="makeup_exp" style="display:none;">
+                  还没想好这里放啥东东呢~嘻嘻
+                </div>
+            </div>
+            <div id="shelter_middle" class="shelters">
+                <div id="shelter_middle_board"></div>
+                <div id="diarybook"></div>
+                <div id="diaryhint" style="display:none;">
+                    宝宝，这里记录了我们的历程，可以经常回来看噢^-^
+                </div>
+                <div id="diary_enter" style="display:none;">
+                    <button id="enterdiarybtn">进入</button>
+                </div>
+            </div>
+            <div id="shelter_below" class="shelters">
+                <div id="shelter_below_board"></div>
+                <div id="locker"></div>
+                <div id="lockerhint" style="display:none;">
+                    这里面不对外开放，只有宝宝和我才可以进去看~
+                </div>
+                 <div id="locker_enter" style="display:none;">
+                    <input type="password" id="password"/>
+                    <button id="enterlockerbtn">进入</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="shelter">
-        <div id="shelter_above" class="shelters">
-            <div id="shelter_above_board"></div>
-            <div id="eye_makeup"></div>
-            <div id="lipstick"></div>
+    <div id="diarypage" style="display:none;">
+        <button id="backtohomebtn1">返回</button>
+        <div class="diary_notes">
+           <h3>外國樂隊</h3>
+           <p>外國樂隊涉當黑工違法表演，入境處放蛇爆衝突釀1傷，大批警員持盾牌到場控制場面，3人被捕。現場為觀塘鴻圖道80號音樂場地Hidden Agenda，昨晚外國樂隊TTNG及MYLETS獲邀來港表演，觀眾達數百人，入境處懷疑樂隊簽證有問題，遂派員到場放蛇。</p>
         </div>
-        <div id="shelter_middle" class="shelters">
-            <div id="shelter_middle_board"></div>
-            <div id="diarybook"></div>
+         <div class="diary_notes">
+           <h3>外國樂隊</h3>
+           <p>外國樂隊涉當黑工違法表演，入境處放蛇爆衝突釀1傷，大批警員持盾牌到場控制場面，3人被捕。現場為觀塘鴻圖道80號音樂場地Hidden Agenda，昨晚外國樂隊TTNG及MYLETS獲邀來港表演，觀眾達數百人，入境處懷疑樂隊簽證有問題，遂派員到場放蛇。</p>
         </div>
-        <div id="shelter_below" class="shelters">
-            <div id="shelter_below_board"></div>
-            <div id="locker"></div>
+    </div>
+    <div id="lockpage" style="display:none;">
+        <button id="backtohomebtn2">返回</button>
+        <div class="lock_notes">
+           <p id="lock_content">宝宝</br>对不起</br>我爱你</p>
+           <div id="cry_gif"></div>
         </div>
     </div>
 </body>
