@@ -3,8 +3,40 @@
 }
 
 .shelters{
-	height:200px;
+	height:150px;
 	position:relative;
+}
+
+#memo_rope{
+	width:250px;
+	height:184px;
+	background: url(../images/memo.png) center no-repeat;
+	background-size:cover;
+	position:relative;
+}
+
+#memo1{
+	width:50px;
+	height:50px;
+	background:url(../images/memo1.png) center no-repeat;
+	background-size:cover;
+	position:absolute;
+	left:40px;
+	top:115px;
+}
+
+#memo2{
+	width:50px;
+	height:50px;
+	background:url(../images/memo2.png) center no-repeat;
+	background-size:cover;
+	position:absolute;
+	left:135px;
+	top:75px;
+}
+
+#shelter_above{
+	height:90px;
 }
 
 #shelter_above_board{
