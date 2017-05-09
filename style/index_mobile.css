@@ -46,6 +46,7 @@
 	position:absolute;
 	bottom:25px;
 	right:100px;
+	border:none;
 }
 
 #memo_rope{
@@ -81,27 +82,30 @@
 }
 
 #shelter_above_board{
-	width:100%;
+	width:265px;
 	height:19px;
 	background: url(../images/shelter_above.png) center no-repeat;
 	position:absolute;
 	bottom:10px;
+	margin:0 67px;
 }
 
 #shelter_middle_board{
-	width:100%;
+	width:265px;
 	height:19px;
 	background: url(../images/shelter_middle.png) center no-repeat;
 	position:absolute;
 	bottom:10px;
+	margin:0 67px;
 }
 
 #shelter_below_board{
-	width:100%;
+	width:265px;
 	height:19px;
 	background: url(../images/shelter_below.png) center no-repeat;
 	position:absolute;
 	bottom:10px;
+	margin:0 67px;
 }
 
 .diary_notes{
@@ -119,50 +123,8 @@ h3{
 	margin-top:0;
 }
 
-#diaryhint{
-	background:#f7da88;
-	width:150px;
-	height:80px;
-	font-size:15px;
-	position:absolute;
-	left:70px;
-	bottom:-60px;
-	padding:5px;
-	border-radius:5px;
-	box-shadow:0 4px 5px gray;
-}
-
-#diary_enter{
-   width:110px;
-   height:50px;
-   position:absolute;
-   left:180px;
-   bottom:35px;
-}
-
-#enterdiarybtn,#backtohomebtn1,#backtohomebtn2,#enterlockerbtn{
-	width:50px;
-	height:40px;
-	border-radius:5px;
-	background:#f7da88;
-}
-
-#backtohomebtn1{
-	margin-top:20px;
-	margin-left:26px;
-}
-
-#lockerhint{
-	background:#f7da88;
-	width:150px;
-	height:80px;
-	font-size:15px;
-	position:absolute;
-	right:70px;
-	bottom:-60px;
-	padding:5px;
-	border-radius:5px;
-	box-shadow:0 4px 5px gray;
+#backtohomebtn1,#backtohomebtn2{
+    margin:20px 0 0 26px;
 }
 
 #memo_exp{
@@ -198,9 +160,7 @@ h3{
 }
 
 #password{
-   width:60px;
-   padding:3px;
-   margin-bottom:10px;
+   padding:5px;
 }
 
 #enterlockerbtn{

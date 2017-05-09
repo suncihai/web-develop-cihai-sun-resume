@@ -10,159 +10,176 @@
     <!-- Latest compiled and minified JavaScript -->
     <title>LoveDiary</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link rel="stylesheet" media="(max-width:1000px)" href="style/index_mobile.css"/>
+    <link rel="stylesheet" href="style/index_mobile.css"/>
 </head>
 
 <body style="background:url(images/background.png);background-size:cover;">
-    <div id="homebody">
-        <div id="memo_rope">
-            <div id="memo1" class="memos"></div>
-            <div id="memo2" class="memos"></div>
-            <div id="memo_exp" style="display:none;">
-                以后便条打算写一些提醒宝宝的生活用语：吃药啊，喝粥啊，balabala
-            </div>
-        </div>
-        <div id="shelter">
-            <div id="shelter_above" class="shelters">
-                <div id="shelter_above_board"></div>
-                <div id="eye_makeup" class="makeups"></div>
-                <div id="lipstick" class="makeups"></div>
-                <div id="makeup_exp" style="display:none;">
-                  还没想好这里放啥东东呢~嘻嘻
+    <div id="container" style="width:375px;margin:0 auto;">
+        <div id="homebody">
+            <div id="memo_rope">
+                <div id="memo1" class="memos"></div>
+                <div id="memo2" class="memos"></div>
+                <div id="memo_exp" style="display:none;">
+                    以后便条打算写一些提醒宝宝的生活用语：吃药啊，喝粥啊，balabala
                 </div>
             </div>
-            <div id="shelter_middle" class="shelters">
-                <div id="shelter_middle_board"></div>
-                <div id="diarybook"></div>
-                <div id="diaryhint" style="display:none;">
-                    宝宝，这里记录了我们的历程，可以经常回来看噢^-^
+            <div id="shelter">
+                <div id="shelter_above" class="shelters">
+                    <div id="shelter_above_board"></div>
+                    <div id="eye_makeup" class="makeups"></div>
+                    <div id="lipstick" class="makeups"></div>
+                    <div id="makeup_exp" style="display:none;">
+                       还没想好这里放啥东东呢~嘻嘻
+                    </div>
                 </div>
-                <div id="diary_enter" style="display:none;">
-                    <button id="enterdiarybtn">进入</button>
+                <div id="shelter_middle" class="shelters">
+                    <div id="shelter_middle_board"></div>
+                    <div id="diarybook"></div>
+                </div>
+                <div id="shelter_below" class="shelters">
+                    <div id="shelter_below_board"></div>
+                    <button id="locker" type="button" data-toggle="modal" data-target="#passwordmodal"></button>
+                    <div class="modal fade" id="passwordmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document" style="margin-top:50%;">
+                        <div class="modal-content" style="background:pink;">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel" style="display:inline;color:white;font-weight:bold;">宝宝专用密码</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <input type="password" class="form-control" id="password" placeholder="宝宝的密码">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">退出</button>
+                            <button type="button" class="btn btn-success" id="entersecretary">进入</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
-            <div id="shelter_below" class="shelters">
-                <div id="shelter_below_board"></div>
-                <div id="locker"></div>
-                <div id="lockerhint" style="display:none;">
-                    这里面不对外开放，只有宝宝和我才可以进去看~
-                </div>
-                 <div id="locker_enter" style="display:none;">
-                    <input type="password" id="password"/>
-                    <button id="enterlockerbtn">进入</button>
-                </div>
+        </div>
+        <div id="diarypage" style="display:none;">
+            <button id="backtohomebtn1" class="btn btn-success">返回</button>
+            <div class="diary_notes">
+               <h3>4月10日</h3>
+               <p>今天是又是一个星期天，中午和两个好基友出去吃了个饭。回家后看到红豆有条消息。
+                打开一看，是一个看上去挺乖巧的女孩子。话很简短，好像是说您好，我的资料很简单，很真诚，我看了下，是我的菜，然后我就回复了哈哈，那是呀~然后就继续等待ing。</p>
+             </div>
+             <div class="diary_notes">
+               <h3>4月11日</h3>
+               <p>早上醒来，怀着有点忐忑的小心心打开红豆，结果什么都没有，好失望啊。。还是上班去吧。。地铁好挤啊。。。</p>
+            </div>
+            <div class="diary_notes">
+               <h3>4月12日</h3>
+               <p>睡眼惺忪地醒过来，发现手机提示屏上的粉色消息，顿时虎躯一震，打开一看，有她的回复了也！那要个微信吧？发过去，结果得到的回复是：过几天吧，先了解一下吧。唉，好失望啊。。</p>
+            </div>
+             <div class="diary_notes">
+               <h3>4月13日</h3>
+               <p>今天上班刚下地铁，发现这个女孩居然又发了条：我看你资料挺真诚的，可以加微信吧。顿时挺激动的，就加上了她~好开心啊</p>
+            </div>
+            <div class="diary_notes">
+               <h3>4月14日</h3>
+               <p>微信加好了，然后我就很呆头呆脑地直接自报姓名，她也告诉我了她的名字，叫宝宝。嗯，很好听的名字。</p>
+            </div>
+            <div class="diary_notes">
+               <h3>4月15日</h3>
+               <p>好像她刚回国了，是因为要处理一些事情，所以和她聊天有时差。不过还是挺有意思的女孩，她说以前好喜欢动漫的类，还幻想过做动漫。我在想以后如果有机会的话，要不做个小动漫给她呢？哈哈。</p>
+            </div>
+             <div class="diary_notes">
+               <h3>4月16日</h3>
+               <p>她说她在家里的小工厂里帮下忙，反正挺忙的，我也不懂那方面的东西，也给不了啥合适的建议，只能说好辛苦啊balabala的。她说好喜欢吃寿司啊，在加州一直会吃寿司。</p>
+            </div>
+             <div class="diary_notes">
+               <h3>4月17日</h3>
+               <p>她说到了表姐和她是一对欢喜冤家，经常打打闹闹的，唉，我也想到我的表姐了，也好长时间没回国了呢。</p>
+            </div>
+             <div class="diary_notes">
+               <h3>4月18日</h3>
+               <p>说过了表姐，她又谈到了小姨，好像她小学开始就去北京了，北京我就去过两三次呢。搭不上啥话题，好揪心啊。除了雾霾我憋不出啥东东了，于是她给我起了一个绰号叫闷葫芦，这是啥啊。。。</p>
+            </div>
+            <div class="diary_notes">
+               <h3>4月19日</h3>
+               <p>今天地铁居然崩溃了，oh my god，她好像也挺关心我的，我到公司都快10点了，她还发消息问我咋样。真的有点小感动啊啊啊啊</p>
+            </div>
+             <div class="diary_notes">
+               <h3>4月20日</h3>
+               <p>今天听她语音好像挺疲惫的，貌似她叫她表弟帮她捶背了，好像她表弟也挺听话的，她说她很宠她表弟的，唉，我就没人宠</p>
+            </div>
+             <div class="diary_notes">
+               <h3>4月21日</h3>
+               <p>她开始提到了她前任，一个渣男，唉，这么好的妹子，还好分了。后来才说其实大学时也谈过一个，哎，我一对比好单纯，感觉她像是老司机。</p>
+            </div>
+            <div class="diary_notes">
+               <h3>4月22日</h3>
+               <p>我们逐渐地熟络了起来，我好像在她面前不再是闷葫芦了，看来挺有缘分的。不过我今天问了一个很傻的问题，唉，都不想说了，都不好意思</p>
+            </div>
+            <div class="diary_notes">
+               <h3>4月23日</h3>
+               <p>听到她说家乡话了，听不懂，555。不过反正听她声音挺甜的，那就可以了，哇哈哈。</p>
+            </div>
+             <div class="diary_notes">
+               <h3>4月25日</h3>
+               <p>她今天要和她妈妈一起坐高铁，在路上的车上因为和妈咪和司机在一起，还不好意思语音，挺可爱的。然后听她说好像在高铁里她和妈妈谈到了我？啥情况啊。</p>
+            </div>
+             <div class="diary_notes">
+               <h3>4月26日</h3>
+               <p>她们工厂里一个工人被冲走了，好烦心。怎么会有这种事呢。。</p>
+            </div>
+            <div class="diary_notes">
+               <h3>4月27日</h3>
+               <p>家属来闹，她说她作为领导，一定要顶在员工前面，然而我却说不要冲在太前面，唉，我的思想觉悟真是自愧不如。好佩服她啊。</p>
+            </div>
+            <div class="diary_notes">
+               <h3>5月1日</h3>
+               <p>已经没有听她的语音睡不着觉了，这就是习惯的力量吗，那她也应该一样吧？不过好像和她聊天总是聊不完的，仔细一想都是她带着我聊，真相帝了。</p>
+            </div>
+             <div class="diary_notes">
+               <h3>5月1日</h3>
+               <p>已经没有听她的语音睡不着觉了，这就是习惯的力量吗，那她也应该一样吧？不过好像和她聊天总是聊不完的，仔细一想都是她带着我聊，真相帝了。</p>
+            </div>
+            <div class="diary_notes">
+               <h3>5月2日</h3>
+               <p>明天就是爸爸生日了，下班时再去蛋糕店买蛋糕，8点关门，地铁居然还堵塞，赶在7点57分到了，买到了蛋糕，晚上她说想看蛋糕照片，我就发了爸爸的照片，因为没有单独拍蛋糕的照片，然后她又问我要照片了，我又乖乖地发给她三张照片，她说给她妈咪看了。觉得还挺好的？就在这天晚上，我们不知不觉中稀里糊涂地确定了关系，终于不再是单身狗啦~</p>
+            </div>
+            <div class="diary_notes">
+               <h3>5月3日</h3>
+               <p>一早老妈说她做梦梦到奶奶了，奶奶依旧穿了那件绿色羊绒衣，很慈祥地看着她笑，我一听心里就有数了，看来是奶奶知道我找到女朋友了啊，想到奶奶就心酸。。忍住。。晚上她的消息好冷淡，然后语音里说，辞海要不你在纽约找一个吧。我当时就呆掉了，然后眼泪就控制不住地留下来了，为什么啊。。为什么啊。。有什么理由吗？后来好像她又收回这话了，但是我还是心好痛啊。。我讨厌这种对面话筒里一点都没声音，紧张到窒息的感觉，再来几次我要折寿的。。</p>
+            </div>
+            <div class="diary_notes">
+               <h3>5月4日</h3>
+               <p>和她聊了好久好久，这次真的好久好久，我坚持到了三点多，不行了，不听她的声音已经不能睡觉了。万一以后她不要了怎么办呢？我好怕</p>
+            </div>
+            <div class="diary_notes">
+               <h3>5月5日</h3>
+               <p>聊到了生理问题，她又是一个小白，一点不懂，我又给她科普了一下，结果说她想要三个娃，我说我无所谓的，但是女的生孩子好痛好痛的，相当于十根肋骨一起断掉的疼，听完她默默地不做声了，突然来了一句那你来生好了。可惜现代技术没法实现生，不然一起生也是挺好的</p>
+            </div>
+            <div class="diary_notes">
+               <h3>5月6日</h3>
+               <p>她又聊到了以前的情感经历，我说如果我是女的话，一定不能找有家庭暴力的，打人太可怕了，就像是在和一颗定时炸弹生活。她说是啊然后又夸了我一番。她在开车前电话里亲了我一口，我心酥酥的，好痒</p>
+            </div>
+            <div class="diary_notes">
+               <h3>5月7日</h3>
+               <p>她朋友圈里说真的爱上了，我感动地一塌糊涂，她若不离不弃，我必生死相依，不然还咋办呢，这孩子没人照顾真放心不下，还老是胃疼，都五六天了还在拖。晚上我打算做日记了，在写代码时精力集中在思考上，一个不小心说了好几次一般被误会了，跳进黄河也洗不清了，555</p>
+            </div>
+             <div class="diary_notes">
+               <h3>5月8日</h3>
+               <p>宝宝晚上发了好多好多语音和很长串的消息，我看得好晕啊。昨天晚上睡得挺晚的，上班很难集中精力。宝宝说昨天遇到的律师挺好的，让人挺心疼的，还是从小有爸妈宠的孩子好幸福啊。宝宝也挺幸福的，我遇到宝宝也挺幸福的呢。其实是有点吃醋的，不过后来转念一想其实没关系啊。把宝宝宠到其他男人受不了了不就行啦~这样其他男人看到宝宝都怕怕了也~开玩笑的啦。其实我必须要对宝宝越来越好，因为宝宝单身的时候有好多人追，但是宝宝不单身的话就没人追的，她要失落的。</br>
+               </br>
+
+               宝宝有问起为什么我相亲这么多次都怎么成功，其实我有成功过啊。而且次数其实也不算多吧，宝宝说我条件其实不错啊，放低要求其实可以找到女朋友的呀，后来还怀疑我是不是喜欢男的了，啊啊啊好憋屈啊，相亲这种其实对于我这种一面定胜负的人来说真的挺吃亏的呢。宝宝还不断地诱惑我去她那里，说只要去，亲哪里都可以的。宝宝真的是太会撩人了，直弄得我心痒痒，呜呜呜。</br></br>
+
+               其实对宝宝一句话很感动很感动的，宝宝说很后悔没有在她最好的时候遇见我，我看到当时就有点想哭。都已经这么托付给我了，我不努力怎么行呢，要开始培养对家庭的责任感了，嗯嗯。</p>
             </div>
         </div>
-    </div>
-    <div id="diarypage" style="display:none;">
-        <button id="backtohomebtn1">返回</button>
-        <div class="diary_notes">
-           <h3>4月10日</h3>
-           <p>今天是又是一个星期天，中午和两个好基友出去吃了个饭。回家后看到红豆有条消息。
-            打开一看，是一个看上去挺乖巧的女孩子。话很简短，好像是说您好，我的资料很简单，很真诚，我看了下，是我的菜，然后我就回复了哈哈，那是呀~然后就继续等待ing。</p>
-         </div>
-         <div class="diary_notes">
-           <h3>4月11日</h3>
-           <p>早上醒来，怀着有点忐忑的小心心打开红豆，结果什么都没有，好失望啊。。还是上班去吧。。地铁好挤啊。。。</p>
-        </div>
-        <div class="diary_notes">
-           <h3>4月12日</h3>
-           <p>睡眼惺忪地醒过来，发现手机提示屏上的粉色消息，顿时虎躯一震，打开一看，有她的回复了也！那要个微信吧？发过去，结果得到的回复是：过几天吧，先了解一下吧。唉，好失望啊。。</p>
-        </div>
-         <div class="diary_notes">
-           <h3>4月13日</h3>
-           <p>今天上班刚下地铁，发现这个女孩居然又发了条：我看你资料挺真诚的，可以加微信吧。顿时挺激动的，就加上了她~好开心啊</p>
-        </div>
-        <div class="diary_notes">
-           <h3>4月14日</h3>
-           <p>微信加好了，然后我就很呆头呆脑地直接自报姓名，她也告诉我了她的名字，叫宝宝。嗯，很好听的名字。</p>
-        </div>
-        <div class="diary_notes">
-           <h3>4月15日</h3>
-           <p>好像她刚回国了，是因为要处理一些事情，所以和她聊天有时差。不过还是挺有意思的女孩，她说以前好喜欢动漫的类，还幻想过做动漫。我在想以后如果有机会的话，要不做个小动漫给她呢？哈哈。</p>
-        </div>
-         <div class="diary_notes">
-           <h3>4月16日</h3>
-           <p>她说她在家里的小工厂里帮下忙，反正挺忙的，我也不懂那方面的东西，也给不了啥合适的建议，只能说好辛苦啊balabala的。她说好喜欢吃寿司啊，在加州一直会吃寿司。</p>
-        </div>
-         <div class="diary_notes">
-           <h3>4月17日</h3>
-           <p>她说她不喜欢表姐，因为表姐把她很喜欢的狗狗弄丢了？还有她表姐挺喜欢日本的，还送过她眼药水，但是好像她滴了反而得病了？这表姐有点坑爹啊。。。</p>
-        </div>
-         <div class="diary_notes">
-           <h3>4月18日</h3>
-           <p>说过了表姐，她又谈到了小姨，好像她小学开始就去北京了，北京我就去过两三次呢。搭不上啥话题，好揪心啊。除了雾霾我憋不出啥东东了，于是她给我起了一个绰号叫闷葫芦，这是啥啊。。。</p>
-        </div>
-        <div class="diary_notes">
-           <h3>4月19日</h3>
-           <p>今天地铁居然崩溃了，oh my god，她好像也挺关心我的，我到公司都快10点了，她还发消息问我咋样。真的有点小感动啊啊啊啊</p>
-        </div>
-         <div class="diary_notes">
-           <h3>4月20日</h3>
-           <p>今天听她语音好像挺疲惫的，貌似她叫她表弟帮她捶背了，好像她表弟也挺听话的，她说她很宠她表弟的，唉，我就没人宠</p>
-        </div>
-         <div class="diary_notes">
-           <h3>4月21日</h3>
-           <p>她开始提到了她前任，一个渣男，唉，这么好的妹子，还好分了。后来才说其实大学时也谈过一个，哎，我一对比好单纯，感觉她像是老司机。</p>
-        </div>
-        <div class="diary_notes">
-           <h3>4月22日</h3>
-           <p>我们逐渐地熟络了起来，我好像在她面前不再是闷葫芦了，看来挺有缘分的。不过我今天问了一个很傻的问题，唉，都不想说了，都不好意思</p>
-        </div>
-        <div class="diary_notes">
-           <h3>4月23日</h3>
-           <p>听到她说家乡话了，听不懂，555。不过反正听她声音挺甜的，那就可以了，哇哈哈。</p>
-        </div>
-         <div class="diary_notes">
-           <h3>4月25日</h3>
-           <p>她今天要和她妈妈一起坐高铁，在路上的车上因为和妈咪和司机在一起，还不好意思语音，挺可爱的。然后听她说好像在高铁里她和妈妈谈到了我？啥情况啊。</p>
-        </div>
-         <div class="diary_notes">
-           <h3>4月26日</h3>
-           <p>她们工厂里一个工人被冲走了，好烦心。怎么会有这种事呢。。</p>
-        </div>
-        <div class="diary_notes">
-           <h3>4月27日</h3>
-           <p>家属来闹，她说她作为领导，一定要顶在员工前面，然而我却说不要冲在太前面，唉，我的思想觉悟真是自愧不如。好佩服她啊。</p>
-        </div>
-        <div class="diary_notes">
-           <h3>5月1日</h3>
-           <p>已经没有听她的语音睡不着觉了，这就是习惯的力量吗，那她也应该一样吧？不过好像和她聊天总是聊不完的，仔细一想都是她带着我聊，真相帝了。</p>
-        </div>
-         <div class="diary_notes">
-           <h3>5月1日</h3>
-           <p>已经没有听她的语音睡不着觉了，这就是习惯的力量吗，那她也应该一样吧？不过好像和她聊天总是聊不完的，仔细一想都是她带着我聊，真相帝了。</p>
-        </div>
-        <div class="diary_notes">
-           <h3>5月2日</h3>
-           <p>明天就是爸爸生日了，下班时再去蛋糕店买蛋糕，8点关门，地铁居然还堵塞，赶在7点57分到了，买到了蛋糕，晚上她说想看蛋糕照片，我就发了爸爸的照片，因为没有单独拍蛋糕的照片，然后她又问我要照片了，我又乖乖地发给她三张照片，她说给她妈咪看了。觉得还挺好的？就在这天晚上，我们不知不觉中稀里糊涂地确定了关系，终于不再是单身狗啦~</p>
-        </div>
-        <div class="diary_notes">
-           <h3>5月3日</h3>
-           <p>一早老妈说她做梦梦到奶奶了，奶奶依旧穿了那件绿色羊绒衣，很慈祥地看着她笑，我一听心里就有数了，看来是奶奶知道我找到女朋友了啊，想到奶奶就心酸。。忍住。。晚上她的消息好冷淡，然后语音里说，辞海要不你在纽约找一个吧。我当时就呆掉了，然后眼泪就控制不住地留下来了，为什么啊。。为什么啊。。有什么理由吗？后来好像她又收回这话了，但是我还是心好痛啊。。我讨厌这种对面话筒里一点都没声音，紧张到窒息的感觉，再来几次我要折寿的。。</p>
-        </div>
-        <div class="diary_notes">
-           <h3>5月4日</h3>
-           <p>和她聊了好久好久，这次真的好久好久，我坚持到了三点多，不行了，不听她的声音已经不能睡觉了。万一以后她不要了怎么办呢？我好怕</p>
-        </div>
-        <div class="diary_notes">
-           <h3>5月5日</h3>
-           <p>聊到了生理问题，她又是一个小白，一点不懂，我又给她科普了一下，结果说她想要三个娃，我说我无所谓的，但是女的生孩子好痛好痛的，相当于十根肋骨一起断掉的疼，听完她默默地不做声了，突然来了一句那你来生好了。可惜现代技术没法实现生，不然一起生也是挺好的</p>
-        </div>
-        <div class="diary_notes">
-           <h3>5月6日</h3>
-           <p>她又聊到了以前的情感经历，我说如果我是女的话，一定不能找有家庭暴力的，打人太可怕了，就像是在和一颗定时炸弹生活。她说是啊然后又夸了我一番。她在开车前电话里亲了我一口，我心酥酥的，好痒</p>
-        </div>
-        <div class="diary_notes">
-           <h3>5月7日</h3>
-           <p>她朋友圈里说真的爱上了，我感动地一塌糊涂，她若不离不弃，我必生死相依，不然还咋办呢，这孩子没人照顾真放心不下，还老是胃疼，都五六天了还在拖。晚上我打算做日记了，在写代码时精力集中在思考上，一个不小心说了好几次一般被误会了，跳进黄河也洗不清了，555</p>
-        </div>
-    </div>
-    <div id="lockpage" style="display:none;">
-        <button id="backtohomebtn2">返回</button>
-        <div class="lock_notes">
-           <p id="lock_content">宝宝</br>对不起</br>我爱你</p>
-           <div id="cry_gif"></div>
+        <div id="lockpage" style="display:none;">
+            <button id="backtohomebtn2" class="btn btn-success">返回</button>
+            <div class="lock_notes">
+               <p id="lock_content">宝宝</br>对不起</br>我爱你</p>
+               <div id="cry_gif"></div>
+            </div>
         </div>
     </div>
 </body>

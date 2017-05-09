@@ -1,40 +1,7 @@
 window.onload=function(){
-  var diarybooktimer;
-  var lockertimer;
-  var diarybookboolean=false;
-  var lockerboolean=false;
-
   $("#diarybook").click(function(event){
-  	 $("#locker_enter").fadeOut();
-  	 $("#lockerhint").fadeOut();
-  	 clearInterval(lockertimer);
-  	 lockertimer=null;
-     lockerboolean=false;
-  	 if(!diarybookboolean){
-  	 	event.stopPropagation();
-	  	 var $that = $(this);
-	  	 if(!diarybooktimer){
-	  	 	diarybooktimer = setInterval(function(){
-		        $that.animate({
-			        bottom:"40px"
-			  	 },300);
-			  	 setTimeout(function(){
-			        $that.animate({
-				        bottom:"25px"
-				  	 },300);
-			  	 },300);
-		  	 },600);
-	  	 }
-	  	 $("#diaryhint").fadeIn();
-	  	 $("#diary_enter").fadeIn();
-	  	 diarybookboolean=true;
-	  	}else{
-            clearInterval(diarybooktimer);
-  	        diarybooktimer=null;
-  	        $("#diary_enter").fadeOut();
-  	        $("#diaryhint").fadeOut();
-  	        diarybookboolean=false;
-	  	}
+  	 $("#homebody").hide();
+     $("#diarypage").fadeIn();
   });
 
    $("#locker").click(function(event){
@@ -70,18 +37,14 @@ window.onload=function(){
 	  	}
   });
 
-  $("#enterdiarybtn").click(function(){
-     $("#homebody").hide();
-     $("#diarypage").fadeIn();
-  });
-
   $("#backtohomebtn1").click(function(){
      $("#diarypage").hide();
      $("#homebody").fadeIn();
   });
 
-  $("#enterlockerbtn").click(function(){
-     if($("#password").prop("value")=="aibaobao"){
+  $("#entersecretary").click(function(){
+      if($("#password").prop("value")=="aibaobao"){
+      	$("#passwordmodal").modal("hide");
      	$("#homebody").hide();
         $("#lockpage").fadeIn();
      }
