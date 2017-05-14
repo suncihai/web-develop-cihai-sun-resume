@@ -189,3 +189,14 @@ h3{
 	background-size:cover;
 	margin:0 auto;
 }
+
+#bubble_dummylayer{
+	position: absolute;
+	z-index:100;
+}
+
+#bubble_layer{
+	position: relative;
+	width:100%;
+	height:auto;
+}
