@@ -38,7 +38,11 @@ window.onload=function(){
     $(this).fadeOut();
   });
 
-      setInterval(function(){
+  $("#gotonewestdairy").click(function(){
+     window.location='#newest_dairy';
+  });
+
+  setInterval(function(){
            var bubblerandomleft=Math.ceil(Math.random()*300);
            var BubbleDiv=document.getElementById('bubble_layer');
            var newDiv2=document.createElement('div');
