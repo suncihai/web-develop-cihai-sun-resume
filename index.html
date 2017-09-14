@@ -103,38 +103,6 @@
                 window.pageManager.go(id);
             },1100);
         });
-        $('.js_category').on('click', function(){
-            var $this = $(this),
-                $inner = $this.next('.js_categoryInner'),
-                $page = $this.parents('.page'),
-                $parent = $(this).parent('li');
-            var innerH = $inner.data('height');
-            bear = $page;
-
-            if(!innerH){
-                $inner.css('height', 'auto');
-                innerH = $inner.height();
-                $inner.removeAttr('style');
-                $inner.data('height', innerH);
-            }
-
-            if($parent.hasClass('js_show')){
-                $parent.removeClass('js_show');
-            }else{
-                $parent.siblings().removeClass('js_show');
-
-                $parent.addClass('js_show');
-                if(this.offsetTop + this.offsetHeight + innerH > $page.scrollTop() + winH){
-                    var scrollTop = this.offsetTop + this.offsetHeight + innerH - winH + categorySpace;
-
-                    if(scrollTop > this.offsetTop){
-                        scrollTop = this.offsetTop - categorySpace;
-                    }
-
-                    $page.scrollTop(scrollTop);
-                }
-            }
-        });
 
         var $loadingToast = $('#loadingToast');
         $('.nextbutton').on('click', function(){
@@ -165,7 +133,7 @@
               $("#exchange_amount").css("color","red");
            }else{
               $("#next-to-recipient").removeClass("weui-btn_warn").removeClass("weui-btn_disabled").addClass("weui-btn_primary");
-              $("#exchange_hint").html("汇款金额").css("color","black");
+              $("#exchange_hint").html("汇款金额").css("color","#aaa");
               $("#exchange_amount").css("color","black");
            }
         }
@@ -239,7 +207,7 @@
           <p id="confirmation_des" style="color:#bbb;">最终确认</p>
        </div>
     </div>
-    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg" id="sample_account">
+    <a href="javascript:;" class="weui-media-box weui-media-box_appmsg" id="sample_recipient_account" data-id="payment">
         <div class="weui-media-box__hd">
             <img class="weui-media-box__thumb" src="./images/UnionPay.png" alt="">
         </div>
@@ -248,8 +216,8 @@
             <p class="weui-media-box__desc">银行卡号:<span id="card_number">62202987364772314</span></p>
         </div>
     </a>
-    <div class="page__bd page__bd_spacing" style="margin:250px auto 0;">
-        <a href="javascript:;" id="next-to-add-recipient" class="weui-btn weui-btn_primary js_item nextbutton" data-id="addrecipient" href="javascript:;">添加收款人</a>
+    <div class="page__bd page__bd_spacing" style="margin:150px auto 0;">
+        <a href="javascript:;" id="next-to-add-recipient" class="weui-btn weui-btn_primary js_item nextbutton" data-id="addrecipient">添加收款人</a>
     </div>
     <div class="page__ft">
         <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
@@ -269,38 +237,6 @@
             setTimeout(function(){
                 window.pageManager.go(id);
             },1100);
-        });
-        $('.js_category').on('click', function(){
-            var $this = $(this),
-                $inner = $this.next('.js_categoryInner'),
-                $page = $this.parents('.page'),
-                $parent = $(this).parent('li');
-            var innerH = $inner.data('height');
-            bear = $page;
-
-            if(!innerH){
-                $inner.css('height', 'auto');
-                innerH = $inner.height();
-                $inner.removeAttr('style');
-                $inner.data('height', innerH);
-            }
-
-            if($parent.hasClass('js_show')){
-                $parent.removeClass('js_show');
-            }else{
-                $parent.siblings().removeClass('js_show');
-
-                $parent.addClass('js_show');
-                if(this.offsetTop + this.offsetHeight + innerH > $page.scrollTop() + winH){
-                    var scrollTop = this.offsetTop + this.offsetHeight + innerH - winH + categorySpace;
-
-                    if(scrollTop > this.offsetTop){
-                        scrollTop = this.offsetTop - categorySpace;
-                    }
-
-                    $page.scrollTop(scrollTop);
-                }
-            }
         });
 
         var $loadingToast = $('#loadingToast');
@@ -370,38 +306,6 @@
                 window.pageManager.go(id);
             },1100);
         });
-        $('.js_category').on('click', function(){
-            var $this = $(this),
-                $inner = $this.next('.js_categoryInner'),
-                $page = $this.parents('.page'),
-                $parent = $(this).parent('li');
-            var innerH = $inner.data('height');
-            bear = $page;
-
-            if(!innerH){
-                $inner.css('height', 'auto');
-                innerH = $inner.height();
-                $inner.removeAttr('style');
-                $inner.data('height', innerH);
-            }
-
-            if($parent.hasClass('js_show')){
-                $parent.removeClass('js_show');
-            }else{
-                $parent.siblings().removeClass('js_show');
-
-                $parent.addClass('js_show');
-                if(this.offsetTop + this.offsetHeight + innerH > $page.scrollTop() + winH){
-                    var scrollTop = this.offsetTop + this.offsetHeight + innerH - winH + categorySpace;
-
-                    if(scrollTop > this.offsetTop){
-                        scrollTop = this.offsetTop - categorySpace;
-                    }
-
-                    $page.scrollTop(scrollTop);
-                }
-            }
-        });
 
         var $loadingToast = $('#loadingToast');
         $('.nextbutton').on('click', function(){
@@ -427,6 +331,77 @@
             }else{
                $("#back-to-recipient").addClass("weui-btn_disabled");
             }
+        });
+    });
+</script>
+</script>
+
+<script type="text/html" id="tpl_payment">
+<div class="page">
+    <div style="background:#2ab350;height:120px;text-align:center;">
+        <img src="./images/logo.png" alt="LineMoney" style="margin:30px;"/>
+    </div>
+    <div style="text-align:center;padding:10px;font-size:12px;">
+       <div style="display:inline-block;text-align:center;margin:10px;">
+          <img src="./images/exchange_visited.png"/>
+          <p id="exchange_des" style="color:#2ab350;">汇款金额</p>
+       </div>
+       <div style="display:inline-block;text-align:center;margin:10px;">
+          <img src="./images/recipient_visited.png"/>
+          <p id="recipient_des" style="color:#2ab350;">收款账户</p>
+       </div>
+       <div style="display:inline-block;text-align:center;margin:10px;">
+          <img src="./images/payment_visited.png"/>
+          <p id="payment_des" style="color:#2ab350;">汇款方式</p>
+       </div>
+       <div style="display:inline-block;text-align:center;margin:10px;">
+          <img src="./images/confirmation_unvisited.png"/>
+          <p id="confirmation_des" style="color:#bbb;">最终确认</p>
+       </div>
+    </div>
+    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg" id="sample_payment_account">
+        <div class="weui-media-box__hd">
+            <img class="weui-media-box__thumb" src="./images/Chase.png" alt="">
+        </div>
+        <div class="weui-media-box__bd">
+            <h4 class="weui-media-box__title" id="card_name">Cihai Sun</h4>
+            <p class="weui-media-box__desc">银行卡号:<span id="card_number">62202987364772314</span></p>
+        </div>
+    </a>
+    <div class="page__bd page__bd_spacing" style="margin:150px auto 0;">
+        <a href="javascript:;" id="next-to-add-payment" class="weui-btn weui-btn_primary js_item nextbutton" data-id="addrecipient" href="javascript:;">添加付款方式</a>
+    </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var winH = $(window).height();
+        var categorySpace = 10;
+        var rate = 6.5121;
+
+        $('.js_item').on('click', function(){
+            if($(this).hasClass("weui-btn_disabled")){
+               return false;
+            }
+            var id = $(this).data('id');
+            setTimeout(function(){
+                window.pageManager.go(id);
+            },1100);
+        });
+
+        var $loadingToast = $('#loadingToast');
+        $('.nextbutton').on('click', function(){
+            if($(this).hasClass("weui-btn_disabled")){
+               return false;
+            }
+            if ($loadingToast.css('display') != 'none') return;
+
+            $loadingToast.fadeIn(100);
+            setTimeout(function () {
+                $loadingToast.fadeOut(100);
+            },1000);
         });
     });
 </script>
