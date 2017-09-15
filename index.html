@@ -24,9 +24,12 @@
         </div>
     </div>
     </div>
+    
+
 
 <script type="text/html" id="tpl_home">
-<div class="page">
+    <link rel="import" href="pages/home.html">
+<!-- <div class="page">
     <div style="background:#2ab350;height:120px;text-align:center;">
         <img src="./images/logo.png" alt="LineMoney" style="margin:30px;"/>
     </div>
@@ -182,8 +185,8 @@
            }
         }
     });
-</script>
-</script>
+</script> -->
+</script> 
 <script type="text/html" id="tpl_recipient">
 <div class="page">
     <div style="background:#2ab350;height:120px;text-align:center;">
@@ -207,7 +210,7 @@
           <p id="confirmation_des" style="color:#bbb;">最终确认</p>
        </div>
     </div>
-    <a href="javascript:;" class="weui-media-box weui-media-box_appmsg" id="sample_recipient_account" data-id="payment">
+    <a href="javascript:;" class="weui-media-box weui-media-box_appmsg js_item" id="sample_recipient_account" data-id="payment">
         <div class="weui-media-box__hd">
             <img class="weui-media-box__thumb" src="./images/UnionPay.png" alt="">
         </div>
@@ -359,7 +362,7 @@
           <p id="confirmation_des" style="color:#bbb;">最终确认</p>
        </div>
     </div>
-    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg" id="sample_payment_account">
+    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg js_item" id="sample_payment_account">
         <div class="weui-media-box__hd">
             <img class="weui-media-box__thumb" src="./images/Chase.png" alt="">
         </div>
