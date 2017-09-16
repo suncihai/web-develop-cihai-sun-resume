@@ -10,8 +10,32 @@
   <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
   <script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
   <script src="js/example.js"></script>
-
 </head>
+
+<script type="text/javascript">
+    $(function(){
+        var winH = $(window).height();
+
+        $('.js_item').on('click', function(){
+            if($(this).hasClass("weui-btn_disabled")){
+               return false;
+            }
+            var id = $(this).data('id');
+            setTimeout(function(){
+                window.pageManager.go(id);
+            },1100);
+        });
+
+        $('.weui-tabbar__item').on('click', function(){
+            var $that = $(this);
+            $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+            setTimeout(function(){
+                window.pageManager.go($that.prop("id"));
+            },300);
+        });
+    });
+</script>
+
 <body ontouchstart>
    <div class="weui-toptips weui-toptips_warn js_tooltips">错误提示</div>
 
@@ -37,11 +61,56 @@
             <p class="weui-toast__content">已完成</p>
           </div>
         </div>
+        <div id="dialogs">
+          <div class="js_dialog" id="iosDialog" style="display:none;">
+              <div class="weui-mask"></div>
+              <div class="weui-dialog">
+                  <div class="weui-dialog__bd" id="limitation_content" style="text-align:left;"></div>
+                  <div class="weui-dialog__ft">
+                      <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">知道了</a>
+                  </div>
+              </div>
+          </div>
+        </div>  
     </div>
+    <div class="weui-tab">
+          <div class="weui-tab__panel">
+
+          </div>
+          <div class="weui-tabbar">
+              <a href="javascript:;" id="home" class="weui-tabbar__item weui-bar__item_on">
+                  <span style="display: inline-block;position: relative;">
+                      <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                  </span>
+                  <p class="weui-tabbar__label">汇款</p>
+              </a>
+              <a href="javascript:;" id="myorder" class="weui-tabbar__item">
+                  <span style="display: inline-block;position: relative;">
+                      <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                      <span id="order_indicator" class="weui-badge" style="position: absolute;top: -2px;right: -13px;display:none;">1</span>
+                  </span>
+                  <p class="weui-tabbar__label">我的订单</p>
+              </a>
+              <a href="javascript:;" id="myprofile" class="weui-tabbar__item">
+                  <span style="display: inline-block;position: relative;">
+                      <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                      <span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+                  </span>
+                  <p class="weui-tabbar__label">我的资料</p>
+              </a>
+              <a href="javascript:;" id="mycircle" class="weui-tabbar__item">
+                  <span style="display: inline-block;position: relative;">
+                      <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                      <span id="circle_indicator" class="weui-badge" style="position: absolute;top: -2px;right: -13px;">3</span>
+                  </span>
+                  <p class="weui-tabbar__label">快汇圈</p>
+              </a>
+          </div>
+      </div>
 <script type="text/html" id="tpl_home">
   <div class="page">
-    <div style="background:#2ab350;height:120px;text-align:center;">
-        <img src="./images/logo.png" alt="LineMoney" style="margin:30px;"/>
+    <div style="background:#2ab350;text-align:center;">
+        <img src="./images/logo.png" alt="LineMoney" style="width:150px;margin:15px;"/>
     </div>
     <div style="text-align:center;padding:10px;font-size:12px;">
        <div style="display:inline-block;text-align:center;margin:10px;">
@@ -60,6 +129,12 @@
           <img src="./images/confirmation_unvisited.png"/>
           <p id="confirmation_des" style="color:#bbb;">最终确认</p>
        </div>
+    </div>
+    <div class="weui-panel__ft">
+        <a href="javascript:void(0);" id="check_limitation" class="weui-cell weui-cell_access weui-cell_link">
+            <div class="weui-cell__bd">查看汇款额度</div>
+            <span class="weui-cell__ft"></span>
+        </a>    
     </div>
     <div class="weui-cells weui-cells_form">
           <div class="weui-cell">
@@ -129,6 +204,21 @@
             setTimeout(function () {
                 $loadingToast.fadeOut(100);
             },1000);
+        });
+
+        var $iosDialog = $('#iosDialog');
+
+        $('#check_limitation').on('click', function(){
+            if($("#selectfromcurrency").val()=="USD"){
+              $('#limitation_content').html("您当前的汇款币种是美元，汇款限额为2000美元。");
+            }else{
+              $('#limitation_content').html("您当前的汇款币种是人民币，汇款限额为50000人民币。");
+            }
+            $iosDialog.fadeIn(200);
+        });
+
+        $('.weui-dialog__btn').on('click', function(){
+            $('.js_dialog').fadeOut(200);
         });
          
         $("#exchange_amount").keyup(function(){
@@ -200,8 +290,8 @@
 </script> 
 <script type="text/html" id="tpl_recipient">
 <div class="page">
-    <div style="background:#2ab350;height:120px;text-align:center;">
-        <img src="./images/logo.png" alt="LineMoney" style="margin:30px;"/>
+    <div style="background:#2ab350;text-align:center;">
+        <img src="./images/logo.png" alt="LineMoney" style="width:150px;margin:15px;"/>
     </div>
     <div style="text-align:center;padding:10px;font-size:12px;">
        <div style="display:inline-block;text-align:center;margin:10px;">
@@ -221,15 +311,22 @@
           <p id="confirmation_des" style="color:#bbb;">最终确认</p>
        </div>
     </div>
-    <a href="javascript:;" class="weui-media-box weui-media-box_appmsg js_item" id="sample_recipient_account" data-id="payment" style="display:none;">
-        <div class="weui-media-box__hd">
-            <img class="weui-media-box__thumb" src="./images/UnionPay.png" alt="">
-        </div>
-        <div class="weui-media-box__bd">
-            <h4 class="weui-media-box__title" id="recipient_card_name"></h4>
-            <p class="weui-media-box__desc">银行卡号:<span id="recipient_card_number"></span></p>
-        </div>
-    </a>
+    <div class="page__bd page__bd_spacing" style="margin:auto;">
+      <div class="weui-cell weui-cell_access" id="sample_recipient_account" style="border:1px solid #2ab350;border-radius:5px;display:none;">
+         <div class="weui-cell__bd">
+            <a href="javascript:;" class="weui-media-box weui-media-box_appmsg js_item" data-id="payment">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="./images/UnionPay.png" alt="">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title" id="recipient_card_name"></h4>
+                    <p class="weui-media-box__desc">银行卡号:<span id="recipient_card_number"></span></p>
+                </div>
+            </a>
+         </div>
+         <div class="weui-cell__ft" style="font-size: 0"></div>
+      </div>
+    </div>
     <div class="page__bd page__bd_spacing" style="margin:150px auto 0;">
         <a href="javascript:;" id="next-to-add-recipient" class="weui-btn weui-btn_primary js_item nextbutton" data-id="addrecipient">添加收款人</a>
     </div>
@@ -269,8 +366,8 @@
 
 <script type="text/html" id="tpl_addrecipient">
 <div class="page">
-    <div style="background:#2ab350;height:120px;text-align:center;">
-        <img src="./images/logo.png" alt="LineMoney" style="margin:30px;"/>
+    <div style="background:#2ab350;text-align:center;">
+        <img src="./images/logo.png" alt="LineMoney" style="width:150px;margin:15px;"/>
     </div>
     <div class="page__bd page__bd_spacing">
          <div class="weui-cells__title">请提供收款人信息</div>
@@ -349,8 +446,8 @@
 
 <script type="text/html" id="tpl_payment">
 <div class="page">
-    <div style="background:#2ab350;height:120px;text-align:center;">
-        <img src="./images/logo.png" alt="LineMoney" style="margin:30px;"/>
+    <div style="background:#2ab350;text-align:center;">
+        <img src="./images/logo.png" alt="LineMoney" style="width:150px;margin:15px;"/>
     </div>
     <div style="text-align:center;padding:10px;font-size:12px;">
        <div style="display:inline-block;text-align:center;margin:10px;">
@@ -370,15 +467,22 @@
           <p id="confirmation_des" style="color:#bbb;">最终确认</p>
        </div>
     </div>
-    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg js_item" id="sample_payment_account" data-id="confirmation" style="display:none;">
-        <div class="weui-media-box__hd">
-            <img class="weui-media-box__thumb" src="./images/Chase.png" alt="">
-        </div>
-        <div class="weui-media-box__bd">
-            <h4 class="weui-media-box__title" id="payment_card_name"></h4>
-            <p class="weui-media-box__desc">银行卡号:<span id="payment_card_number"></span></p>
-        </div>
-    </a>
+    <div class="page__bd page__bd_spacing" style="margin:auto;">
+      <div class="weui-cell weui-cell_access" id="sample_payment_account" style="border:1px solid #2ab350;border-radius:5px;display:none;">
+         <div class="weui-cell__bd">
+            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg js_item" data-id="confirmation">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="./images/Chase.png" alt="">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title" id="payment_card_name"></h4>
+                    <p class="weui-media-box__desc">银行卡号:<span id="payment_card_number"></span></p>
+                </div>
+            </a>
+          </div>
+          <div class="weui-cell__ft" style="font-size: 0"></div>  
+      </div>
+    </div>
     <div class="page__bd page__bd_spacing" style="margin:150px auto 0;">
         <a href="javascript:;" id="next-to-add-payment" class="weui-btn weui-btn_primary js_item nextbutton" data-id="addpayment">添加付款方式</a>
     </div>
@@ -419,8 +523,8 @@
 
 <script type="text/html" id="tpl_addpayment">
 <div class="page">
-    <div style="background:#2ab350;height:120px;text-align:center;">
-        <img src="./images/logo.png" alt="LineMoney" style="margin:30px;"/>
+    <div style="background:#2ab350;text-align:center;">
+        <img src="./images/logo.png" alt="LineMoney" style="width:150px;margin:15px;"/>
     </div>
     <div class="page__bd page__bd_spacing">
          <div class="weui-cells__title">请提供付款人信息</div>
@@ -499,8 +603,8 @@
 
 <script type="text/html" id="tpl_confirmation">
 <div class="page">
-    <div style="background:#2ab350;height:120px;text-align:center;">
-        <img src="./images/logo.png" alt="LineMoney" style="margin:30px;"/>
+    <div style="background:#2ab350;text-align:center;">
+        <img src="./images/logo.png" alt="LineMoney" style="width:150px;margin:15px;"/>
     </div>
     <div style="text-align:center;padding:10px;font-size:12px;">
        <div style="display:inline-block;text-align:center;margin:10px;">
@@ -580,7 +684,8 @@
             var id = $(this).data('id');
             setTimeout(function(){
                 window.pageManager.go(id);
-            },4500);
+                $('#order_indicator').show();
+            },2100);
         });
         
         var $PaymentToast = $('#PaymentToast');
@@ -601,8 +706,36 @@
 
  <script type="text/html" id="tpl_paysuccess">
 <div class="page">
-    <div style="background:#2ab350;height:120px;text-align:center;">
-        <img src="./images/logo.png" alt="LineMoney" style="margin:30px;"/>
+    <div style="background:#2ab350;text-align:center;">
+        <img src="./images/logo.png" alt="LineMoney" style="width:150px;margin:15px;"/>
+    </div>
+    <div class="weui-msg">
+        <div class="weui-msg__icon-area"><i class="weui-icon-success weui-icon_msg"></i></div>
+        <div class="weui-msg__text-area">
+            <h2 class="weui-msg__title">操作成功</h2>
+            <p class="weui-msg__desc">感谢您使用LineMoney汇款服务，您的汇款会马上到账，谢谢您的支持！更多服务请访问<a href="javascript:void(0);">LineMoney官方网站</a></p>
+        </div>
+        <div class="weui-msg__opr-area">
+            <p class="weui-btn-area">
+                <a href="javascript:history.back();" class="weui-btn weui-btn_primary">确认</a>
+            </p>
+        </div>
+        <div class="weui-msg__extra-area">
+            <div class="weui-footer">
+                <p class="weui-footer__links">
+                    <a href="javascript:void(0);" class="weui-footer__link">LineMone快汇</a>
+                </p>
+                <p class="weui-footer__text">Copyright &copy; 2017 LineMoney</p>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+
+ <script type="text/html" id="tpl_myorder">
+<div class="page">
+    <div style="background:#2ab350;text-align:center;">
+        <img src="./images/logo.png" alt="LineMoney" style="width:150px;margin:15px;"/>
     </div>
     <div class="weui-msg">
         <div class="weui-msg__icon-area"><i class="weui-icon-success weui-icon_msg"></i></div>
