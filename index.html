@@ -29,13 +29,41 @@
         $('.weui-tabbar__item').on('click', function(){
             var $that = $(this);
             $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+            resetIcon();
+            switch ($that.prop("id")){
+                case "home":
+                    $('#transfer_icon').prop("src","images/transfer_green.png");
+                    break;
+                case "myorder":
+                    $('#myorder_icon').prop("src","images/myorder_green.png");
+                    break;
+                case "myprofile":
+                    $('#myprofile_icon').prop("src","images/myprofile_green.png");
+                    break;
+                case "mycircle":
+                    $('#mycircle_icon').prop("src","images/mycircle_green.png");
+                    break;
+                default:
+                    break;
+            }
+
             setTimeout(function(){
                 if($that.prop("id")=="myorder"){
                    $("#order_indicator").hide();
                 }
+                if($that.prop("id")=="mycircle"){
+                   $("#circle_indicator").hide();
+                }
                 window.pageManager.go($that.prop("id"));
             },300);
         });
+
+        function resetIcon(){
+            $('#transfer_icon').prop("src","images/transfer_gray.png");
+            $('#myorder_icon').prop("src","images/myorder_gray.png");
+            $('#myprofile_icon').prop("src","images/myprofile_gray.png");
+            $('#mycircle_icon').prop("src","images/mycircle_gray.png");
+        }
     });
 </script>
 
@@ -64,11 +92,97 @@
             <p class="weui-toast__content">已完成</p>
           </div>
         </div>
+        <div id="savedToast" style="display:none;">
+          <div class="weui-mask_transparent"></div>
+          <div class="weui-toast">
+            <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+            <p class="weui-toast__content">已保存</p>
+          </div>
+        </div>
         <div id="dialogs">
           <div class="js_dialog" id="iosDialog" style="display:none;">
               <div class="weui-mask"></div>
               <div class="weui-dialog">
                   <div class="weui-dialog__bd" id="limitation_content" style="text-align:left;"></div>
+                  <div class="weui-dialog__ft">
+                      <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">知道了</a>
+                  </div>
+              </div>
+          </div>
+          <div class="js_dialog" id="iosDialog3" style="display:none;">
+              <div class="weui-mask"></div>
+              <div class="weui-dialog">
+                  <div class="weui-dialog__bd" id="bidding_content" style="text-align:left;">
+                       <div style="text-align:center;margin:5px;">
+                           <input id="bidding_amount" class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入抢标金额" style="text-align:right;font-size:15px;display:inline-block;width:110px;"/>
+                           <span style="display:inline-block;">美元</span>
+                       </div>
+                       <div style="text-align:center;margin:5px;">抢标汇率：6.4000</div>
+                       <div style="text-align:center;margin:5px;">您需要支付：<span id="bidding_payment"></span>人民币</div>
+                  </div>
+                  <div class="weui-dialog__ft">
+                      <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default" id="cancle_bidding">取消</a>
+                      <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary" id="try_bidding">抢标</a>
+                  </div>
+              </div>
+          </div>
+          <div class="js_dialog" id="iosDialog4" style="display:none;">
+              <div class="weui-mask"></div>
+              <div class="weui-dialog">
+                  <div class="weui-dialog__bd" id="bidding_failure" style="text-align:left;">
+                     很可惜！您晚了一步，该竞标已被别的土豪抢走了，祝您下次竞标成功！
+                  </div>
+                  <div class="weui-dialog__ft">
+                      <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary" id="bidding_failure">知道了</a>
+                  </div>
+              </div>
+          </div>
+          <div class="js_dialog" id="iosDialog5" style="display:none;">
+              <div class="weui-mask"></div>
+              <div class="weui-dialog">
+                  <div class="weui-dialog__bd" id="want_bid_content" style="text-align:left;">
+                      您目前没有发标权限，请用您的LineMoney通行证邀请三个好友注册LineMoney即可开通竞标业务。用微信分享我们的链接给您的亲朋好友吧！
+                  </div>
+                  <div class="weui-dialog__ft">
+                      <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default" id="cancle_invite">知道了</a>
+                  </div>
+              </div>
+          </div>
+          <div class="js_dialog" id="iosDialog2" style="display:none;">
+              <div class="weui-mask"></div>
+              <div class="weui-dialog">
+                  <div class="weui-dialog__bd" id="order_content" style="text-align:left;">
+                     <table style="width:250px;">
+                       <tr>
+                           <td>汇款金额：</td>
+                           <td style="text-align:right;"><div id="order_payment_amount_info"></div></td>
+                       </tr>
+                       <tr>
+                           <td>汇    率：</td>
+                           <td style="text-align:right;"><div id="order_rate_info"></div></td>
+                       </tr>
+                       <tr>
+                           <td>收款金额：</td>
+                           <td style="text-align:right;"><div id="order_recipient_amount_info"></div></td>
+                       </tr>
+                       <tr>
+                           <td>付 款 人：</td>
+                           <td style="text-align:right;"><div id="order_payment_name_info"></div></td>
+                       </tr>
+                       <tr>
+                           <td>付款账号：</td>
+                           <td style="text-align:right;"><div id="order_payment_account_info"></div></td>
+                       </tr>
+                       <tr>
+                           <td>收 款 人：</td>
+                           <td style="text-align:right;"><div id="order_recipient_name_info"></div></td>
+                       </tr>
+                       <tr>
+                           <td>收款账号：</td>
+                           <td style="text-align:right;"><div id="order_recipient_account_info"></div></td>
+                       </tr>
+                     </table>
+                  </div>
                   <div class="weui-dialog__ft">
                       <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">知道了</a>
                   </div>
@@ -83,33 +197,34 @@
           <div class="weui-tabbar">
               <a href="javascript:;" id="home" class="weui-tabbar__item weui-bar__item_on">
                   <span style="display: inline-block;position: relative;">
-                      <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                      <img id="transfer_icon" src="./images/transfer_green.png" alt="" class="weui-tabbar__icon">
                   </span>
                   <p class="weui-tabbar__label">汇款</p>
               </a>
               <a href="javascript:;" id="myorder" class="weui-tabbar__item">
                   <span style="display: inline-block;position: relative;">
-                      <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                      <img id="myorder_icon" src="./images/myorder_gray.png" alt="" class="weui-tabbar__icon">
                       <span id="order_indicator" class="weui-badge" style="position: absolute;top: -2px;right: -13px;display:none;"></span>
                   </span>
                   <p class="weui-tabbar__label">我的订单</p>
               </a>
               <a href="javascript:;" id="myprofile" class="weui-tabbar__item">
                   <span style="display: inline-block;position: relative;">
-                      <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
-                      <span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+                      <img id="myprofile_icon" src="./images/myprofile_gray.png" alt="" class="weui-tabbar__icon">
+                      <span id="profile_indicator" class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
                   </span>
                   <p class="weui-tabbar__label">我的资料</p>
               </a>
               <a href="javascript:;" id="mycircle" class="weui-tabbar__item">
                   <span style="display: inline-block;position: relative;">
-                      <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                      <img id="mycircle_icon" src="./images/mycircle_gray.png" alt="" class="weui-tabbar__icon">
                       <span id="circle_indicator" class="weui-badge" style="position: absolute;top: -2px;right: -13px;">2</span>
                   </span>
                   <p class="weui-tabbar__label">快汇圈</p>
               </a>
           </div>
       </div>
+      
 <script type="text/html" id="tpl_home">
   <div class="page">
     <div style="background:#2ab350;text-align:center;">
@@ -172,7 +287,7 @@
           </div>
     </div>
     <div class="weui-cells__tips" style="font-size:13px;"><font color="#2ab350">参考汇率：</font><span id="exhangerate">1 USD = 6.5121 CNY</span></div>
-    <div class="page__bd page__bd_spacing" style="margin:50px auto;">
+    <div class="page__bd page__bd_spacing" style="margin:30px auto;">
        <a href="javascript:;" id="next-to-recipient" class="weui-btn weui-btn_primary js_item nextbutton" data-id="recipient" href="javascript:;">下一步</a>
     </div>
     <div class="page__ft">
@@ -191,6 +306,13 @@
             }
             
             var id = $(this).data('id');
+
+            $('body').data("exchange_currency",$("#selectfromcurrency").val());
+            $('body').data("exchange_amount",$("#exchange_amount").val());
+            $('body').data("rate",rate);
+            $('body').data("recipient_currency",$("#selecttocurrency").val());
+            $('body').data("recipient_amount",$("#recipient_amount").val());
+
             setTimeout(function(){
                 window.pageManager.go(id);
             },1100);
@@ -291,6 +413,7 @@
     });
 </script>
 </script> 
+
 <script type="text/html" id="tpl_recipient">
 <div class="page">
     <div style="background:#2ab350;text-align:center;">
@@ -414,6 +537,7 @@
                return false;
             }
             var id = $(this).data('id');
+
             setTimeout(function(){
                 window.pageManager.go(id);
             },1100);
@@ -439,6 +563,8 @@
             var name = $("#recipient_name").val();
             var card = $("#recipient_card").val();
             var phone = $("#recipient_phone").val();
+            $('body').data("recipient_name",name);
+            $('body').data("recipient_account",card);
             if((name!="")&&(card!="")&&(phone!="")){
                $("#back-to-recipient").removeClass("weui-btn_disabled");
             }else{
@@ -573,6 +699,7 @@
                return false;
             }
             var id = $(this).data('id');
+            
             setTimeout(function(){
                 window.pageManager.go(id);
             },1100);
@@ -598,6 +725,8 @@
             var name = $("#payment_name").val();
             var card = $("#payment_card").val();
             var phone = $("#payment_phone").val();
+            $('body').data("payment_name",name);
+            $('body').data("payment_account",card);
             if((name!="")&&(card!="")&&(phone!="")){
                $("#back-to-payment").removeClass("weui-btn_disabled");
             }else{
@@ -725,7 +854,7 @@
         </div>
         <div class="weui-msg__opr-area">
             <p class="weui-btn-area">
-                <a href="javascript:history.back();" class="weui-btn weui-btn_primary">确认</a>
+                <a href="javascript:;" data-id="home" class="weui-btn weui-btn_primary js_item">确认</a>
             </p>
         </div>
         <div class="weui-msg__extra-area" style="bottom:50px;">
@@ -767,21 +896,21 @@
         <br>
         <div id="neworder" class="weui-form-preview" style="display:none;">
             <div class="weui-form-preview__hd">
-                <label class="weui-form-preview__label">付款金额</label>
-                <em class="weui-form-preview__value">¥2400.00</em>
+                <label class="weui-form-preview__label">汇款金额</label>
+                <em class="weui-form-preview__value" id="order_payment_amount"></em>
             </div>
             <div class="weui-form-preview__bd">
                 <div class="weui-form-preview__item">
-                    <label class="weui-form-preview__label">商品</label>
-                    <span class="weui-form-preview__value">电动打蛋机</span>
+                    <label class="weui-form-preview__label">收款金额</label>
+                    <span class="weui-form-preview__value" id="order_recipient_amount"></span>
                 </div>
                 <div class="weui-form-preview__item">
-                    <label class="weui-form-preview__label">标题标题</label>
-                    <span class="weui-form-preview__value">名字名字名字</span>
+                    <label class="weui-form-preview__label">收款人</label>
+                    <span class="weui-form-preview__value" id="order_recipient_name"></span>
                 </div>
             </div>
             <div class="weui-form-preview__ft">
-                <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
+                <a class="weui-form-preview__btn weui-form-preview__btn_primary" id="check_order" href="javascript:">查看详情</a>
             </div>
         </div>
     </div>
@@ -806,6 +935,234 @@
         if($('#order_indicator').html()==1){
             $('#neworder').show();
         }
+
+        $('#order_payment_amount').html($('body').data("exchange_amount")+" "+$('body').data("exchange_currency"));
+        $('#order_recipient_amount').html($('body').data("recipient_amount")+" "+$('body').data("recipient_currency"));
+        $('#order_recipient_name').html($('body').data("recipient_name"));
+
+        $('#order_payment_amount_info').html($('body').data("exchange_amount")+" "+$('body').data("exchange_currency"));
+        $('#order_rate_info').html($('body').data("rate"));
+        $('#order_recipient_amount_info').html($('body').data("recipient_amount")+" "+$('body').data("recipient_currency"));
+        $('#order_payment_name_info').html($('body').data("payment_name"));
+        $('#order_payment_account_info').html($('body').data("payment_account"));
+        $('#order_recipient_name_info').html($('body').data("recipient_name"));
+        $('#order_recipient_account_info').html($('body').data("recipient_account"));
+
+        var $iosDialog2 = $('#iosDialog2');
+
+        $('#check_order').on('click', function(){
+            $iosDialog2.fadeIn(200);
+        });
+
+        $('.weui-dialog__btn').on('click', function(){
+            $('.js_dialog').fadeOut(200);
+        });
+    });
+</script>
+</script>
+
+<script type="text/html" id="tpl_mycircle">
+<div class="page">
+    <div style="background:#2ab350;text-align:center;">
+        <img src="./images/logo.png" alt="LineMoney" style="width:150px;margin:15px;"/>
+    </div>
+    <div class="page__bd">
+        <br>
+        <div class="weui-cell">
+            <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                <img src="images/shiye.jpg" style="width: 50px;display: block"/>
+            </div>
+            <div class="weui-cell__bd">
+                <p style="font-size:13px;color:#587bc0;font-weight:bold;">师爷</p>
+                <p style="font-size:13px;">汇了300美元给jino,jino很开心</p>
+                <p style="font-size:11px;color:#888888;">30分钟前</p>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                <img src="images/feizhu.jpg" style="width: 50px;display: block"/>
+            </div>
+            <div class="weui-cell__bd">
+                <p style="font-size:13px;color:#587bc0;font-weight:bold;">肥竹</p>
+                <p style="font-size: 13px;">汇了5000人民币给昆涛，昆涛很冷淡</p>
+                <p style="font-size: 11px;color:#888888;">16分钟前</p>
+            </div>
+        </div>
+        <div class="weui-cell" id="new_bidding" style="display:none;">
+            <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                <img src="images/warren.jpg" style="width: 50px;display: block"/>
+            </div>
+            <div class="weui-cell__bd">
+                <p style="font-size:13px;color:#587bc0;font-weight:bold;">王总</p>
+                <div style="width:210px;border:1px solid #2ab350;border-radius:3px;" id="bidding_sample">
+                    <div style="background:#2ab350;padding:10px;">
+                        <div style="display:inline-block;vertical-align:middle;">
+                            <img src="images/logo_badge.png" style="width:30px;">
+                        </div>
+                        <div style="display:inline-block;vertical-align:middle;color:white;">
+                            <p style="font-size:15px;">100,000美元</p>
+                            <table style="width:100px;font-size:11px;">
+                               <tr>
+                                   <td>自定义汇率:</td>
+                                   <td style="text-align:right;">6.4000</td>
+                               </tr>
+                               <tr>
+                                   <td>市场汇率:</td>
+                                   <td style="text-align:right;">6.5123</td>
+                               </tr>
+                            </table>
+                            <p style="font-size:11px;">点击抢标</p>
+                        </div>
+                    </div>
+                    <div style="background:white;font-size:9px;color:#888888;padding:5px;">LineMoney自由竞标</div>
+                </div>
+                <p style="font-size: 11px;color:#888888;">1分钟前</p>
+            </div>
+        </div>
+    </div>
+    <div class="page__bd page__bd_spacing" style="margin:auto;position:fixed;bottom:70px;width:92%;padding:15px;">
+       <a href="javascript:;" class="weui-btn weui-btn_primary js_item nextbutton" id="want_bid">我要发标</a>
+    </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var winH = $(window).height();
+
+        $('.js_item').on('click', function(){
+            if($(this).hasClass("weui-btn_disabled")){
+               return false;
+            }
+            var id = $(this).data('id');
+            setTimeout(function(){
+                window.pageManager.go(id);
+            },2100);
+        });
+
+        setTimeout(function(){
+           $('#new_bidding').show();
+        },3000);
+
+        var $iosDialog3 = $('#iosDialog3');
+        var $iosDialog4 = $('#iosDialog4');
+        var $iosDialog5 = $('#iosDialog5');
+
+        $('#bidding_sample').on('click',function(){
+            $iosDialog3.fadeIn(200);
+        });
+
+        $('#cancle_bidding').on('click',function(){
+            $('.js_dialog').fadeOut(200);
+        });
+
+        $('#bidding_failure').on('click',function(){
+            $iosDialog4.fadeOut(200);
+            $('#bidding_sample').css("opacity",0.5);
+            $('body').off("click","#bidding_sample");
+        });
+
+        $('#bidding_amount').keyup(function(){
+           $('#bidding_payment').html(($(this).val()*6.40).toFixed(2));
+        });
+
+        $('#try_bidding').click(function(){
+            $iosDialog3.hide();
+            $iosDialog4.fadeIn(200);
+        });
+
+        $('#want_bid').click(function(){
+            $iosDialog5.fadeIn(200);
+        });
+
+        $('#cancle_invite').on('click',function(){
+            $('.js_dialog').fadeOut(200);
+        });
+    });
+</script>
+</script>
+
+<script type="text/html" id="tpl_myprofile">
+<div class="page">
+    <div style="background:#2ab350;text-align:center;">
+        <img src="./images/logo.png" alt="LineMoney" style="width:150px;margin:15px;"/>
+    </div>
+    
+    <div class="page__bd page__bd_spacing" style="margin:30px auto;">
+        <div class="weui-uploader__input-box" style="width:200px;height:200px;float:none;margin:30px auto;text-align:center;">
+            <input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple/>
+            <div id="profile_img" style="width:200px;height:200px;"></div>
+            <div style="font-size:16px;margin-top:10px;">上传您的照片</div>
+        </div>
+    </div>
+    
+    <div class="page__bd page__bd_spacing" style="margin:50px auto;">
+         <div class="weui-cells__title">请完善您的个人信息</div>
+         <div class="weui-cells weui-cells_form" style="font-size:15px;">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">姓名*</label></div>
+                <div class="weui-cell__bd">
+                    <input id="profile_name" class="weui-input recipient_info_input" type="text" placeholder="请输入你的姓名"/>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">身份证号码*</label></div>
+                <div class="weui-cell__bd">
+                    <input id="profile_card" class="weui-input recipient_info_input" type="text" placeholder="请输入您的身份证号码"/>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label for="" class="weui-label">生日*</label></div>
+                <div class="weui-cell__bd">
+                    <input id="profile_birthday" class="weui-input" type="date" value="" placeholder="请输入您的生日"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page__bd page__bd_spacing" style="margin:20px auto;">
+       <a href="javascript:;" id="save_profile" class="weui-btn weui-btn_primary" href="javascript:;">保存</a>
+    </div>
+
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var winH = $(window).height();
+
+        var $savedToast = $('#savedToast');
+        $('#save_profile').on('click', function(){
+            if ($savedToast.css('display') != 'none') return;
+
+            if(($('#profile_name').val()!='')&&($('#profile_card').val()!='')&&($('#profile_birthday').val()!='')&&($('#profile_img').css("background")!='')){
+               $('#profile_indicator').hide();
+            }
+            
+            $savedToast.fadeIn(100);
+            setTimeout(function () {
+                $savedToast.fadeOut(100);
+            },1200);
+        });
+
+        var $uploaderInput = $("#uploaderInput");
+
+        $uploaderInput.on("change", function(e){
+            var src, url = window.URL || window.webkitURL || window.mozURL, files = e.target.files;
+            for (var i = 0, len = files.length; i < len; ++i) {
+                var file = files[i];
+
+                if (url) {
+                    src = url.createObjectURL(file);
+                } else {
+                    src = e.target.result;
+                }
+                $('#profile_img').css('background','url('+src+')').css("background-size","cover");
+            }
+        });
+
     });
 </script>
 </script>
