@@ -133,7 +133,7 @@
                      很可惜！您晚了一步，该竞标已被别的土豪抢走了，祝您下次竞标成功！
                   </div>
                   <div class="weui-dialog__ft">
-                      <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary" id="bidding_failure">知道了</a>
+                      <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default" id="bidding_failed">取消</a>
                   </div>
               </div>
           </div>
@@ -994,14 +994,14 @@
             </div>
             <div class="weui-cell__bd">
                 <p style="font-size:13px;color:#587bc0;font-weight:bold;">王总</p>
-                <div style="width:210px;border:1px solid #2ab350;border-radius:3px;" id="bidding_sample">
+                <div style="width:230px;border:1px solid #2ab350;border-radius:3px;" id="bidding_sample">
                     <div style="background:#2ab350;padding:10px;">
                         <div style="display:inline-block;vertical-align:middle;">
                             <img src="images/logo_badge.png" style="width:30px;">
                         </div>
                         <div style="display:inline-block;vertical-align:middle;color:white;">
                             <p style="font-size:15px;">100,000美元</p>
-                            <table style="width:100px;font-size:11px;">
+                            <table style="width:120px;font-size:11px;">
                                <tr>
                                    <td>自定义汇率:</td>
                                    <td style="text-align:right;">6.4000</td>
@@ -1020,7 +1020,7 @@
             </div>
         </div>
     </div>
-    <div class="page__bd page__bd_spacing" style="margin:auto;position:fixed;bottom:70px;width:92%;padding:15px;">
+    <div class="page__bd page__bd_spacing" style="background:white;margin:auto;position:fixed;bottom:50px;width:92%;padding:15px;">
        <a href="javascript:;" class="weui-btn weui-btn_primary js_item nextbutton" id="want_bid">我要发标</a>
     </div>
     <div class="page__ft">
@@ -1049,18 +1049,21 @@
         var $iosDialog4 = $('#iosDialog4');
         var $iosDialog5 = $('#iosDialog5');
 
-        $('#bidding_sample').on('click',function(){
-            $iosDialog3.fadeIn(200);
-        });
+        function openbiddialog(){
+           $iosDialog3.fadeIn(200);
+        }
 
-        $('#cancle_bidding').on('click',function(){
+        var bidding_sample = document.getElementById("bidding_sample");
+        bidding_sample.addEventListener("click",openbiddialog, false);
+
+        $('#cancle_bidding').click(function(){
             $('.js_dialog').fadeOut(200);
         });
 
-        $('#bidding_failure').on('click',function(){
+        $('#bidding_failed').click(function(){
             $iosDialog4.fadeOut(200);
             $('#bidding_sample').css("opacity",0.5);
-            $('body').off("click","#bidding_sample");
+             bidding_sample.removeEventListener("click",openbiddialog,false);
         });
 
         $('#bidding_amount').keyup(function(){
@@ -1076,7 +1079,7 @@
             $iosDialog5.fadeIn(200);
         });
 
-        $('#cancle_invite').on('click',function(){
+        $('#cancle_invite').click(function(){
             $('.js_dialog').fadeOut(200);
         });
     });
