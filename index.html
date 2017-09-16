@@ -122,7 +122,7 @@
                   </div>
                   <div class="weui-dialog__ft">
                       <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default" id="cancle_bidding">取消</a>
-                      <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary" id="try_bidding">抢标</a>
+                      <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary" id="go_bidding">抢标</a>
                   </div>
               </div>
           </div>
@@ -1070,7 +1070,7 @@
            $('#bidding_payment').html(($(this).val()*6.40).toFixed(2));
         });
 
-        $('#try_bidding').click(function(){
+        $('#go_bidding').click(function(){
             $iosDialog3.hide();
             $iosDialog4.fadeIn(200);
         });
