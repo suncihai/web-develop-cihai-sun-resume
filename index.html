@@ -30,6 +30,9 @@
             var $that = $(this);
             $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
             setTimeout(function(){
+                if($that.prop("id")=="myorder"){
+                   $("#order_indicator").hide();
+                }
                 window.pageManager.go($that.prop("id"));
             },300);
         });
@@ -87,7 +90,7 @@
               <a href="javascript:;" id="myorder" class="weui-tabbar__item">
                   <span style="display: inline-block;position: relative;">
                       <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
-                      <span id="order_indicator" class="weui-badge" style="position: absolute;top: -2px;right: -13px;display:none;">1</span>
+                      <span id="order_indicator" class="weui-badge" style="position: absolute;top: -2px;right: -13px;display:none;"></span>
                   </span>
                   <p class="weui-tabbar__label">我的订单</p>
               </a>
@@ -101,7 +104,7 @@
               <a href="javascript:;" id="mycircle" class="weui-tabbar__item">
                   <span style="display: inline-block;position: relative;">
                       <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
-                      <span id="circle_indicator" class="weui-badge" style="position: absolute;top: -2px;right: -13px;">3</span>
+                      <span id="circle_indicator" class="weui-badge" style="position: absolute;top: -2px;right: -13px;">2</span>
                   </span>
                   <p class="weui-tabbar__label">快汇圈</p>
               </a>
@@ -169,7 +172,7 @@
           </div>
     </div>
     <div class="weui-cells__tips" style="font-size:13px;"><font color="#2ab350">参考汇率：</font><span id="exhangerate">1 USD = 6.5121 CNY</span></div>
-    <div class="page__bd page__bd_spacing" style="margin:100px auto;">
+    <div class="page__bd page__bd_spacing" style="margin:50px auto;">
        <a href="javascript:;" id="next-to-recipient" class="weui-btn weui-btn_primary js_item nextbutton" data-id="recipient" href="javascript:;">下一步</a>
     </div>
     <div class="page__ft">
@@ -312,20 +315,22 @@
        </div>
     </div>
     <div class="page__bd page__bd_spacing" style="margin:auto;">
+      <a href="javascript:;" class="js_item" data-id="payment">
       <div class="weui-cell weui-cell_access" id="sample_recipient_account" style="border:1px solid #2ab350;border-radius:5px;display:none;">
          <div class="weui-cell__bd">
-            <a href="javascript:;" class="weui-media-box weui-media-box_appmsg js_item" data-id="payment">
+            <div class="weui-media-box weui-media-box_appmsg">
                 <div class="weui-media-box__hd">
                     <img class="weui-media-box__thumb" src="./images/UnionPay.png" alt="">
                 </div>
                 <div class="weui-media-box__bd">
-                    <h4 class="weui-media-box__title" id="recipient_card_name"></h4>
+                    <h4 class="weui-media-box__title" id="recipient_card_name" style="color:#999999;"></h4>
                     <p class="weui-media-box__desc">银行卡号:<span id="recipient_card_number"></span></p>
                 </div>
-            </a>
+            </div>
          </div>
          <div class="weui-cell__ft" style="font-size: 0"></div>
       </div>
+       </a>
     </div>
     <div class="page__bd page__bd_spacing" style="margin:150px auto 0;">
         <a href="javascript:;" id="next-to-add-recipient" class="weui-btn weui-btn_primary js_item nextbutton" data-id="addrecipient">添加收款人</a>
@@ -468,20 +473,22 @@
        </div>
     </div>
     <div class="page__bd page__bd_spacing" style="margin:auto;">
-      <div class="weui-cell weui-cell_access" id="sample_payment_account" style="border:1px solid #2ab350;border-radius:5px;display:none;">
-         <div class="weui-cell__bd">
-            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg js_item" data-id="confirmation">
+      <a href="javascript:void(0);" class="js_item" data-id="confirmation">
+        <div class="weui-cell weui-cell_access" id="sample_payment_account" style="border:1px solid #2ab350;border-radius:5px;display:none;">
+          <div class="weui-cell__bd">
+            <div class="weui-media-box weui-media-box_appmsg">
                 <div class="weui-media-box__hd">
                     <img class="weui-media-box__thumb" src="./images/Chase.png" alt="">
                 </div>
                 <div class="weui-media-box__bd">
-                    <h4 class="weui-media-box__title" id="payment_card_name"></h4>
+                    <h4 class="weui-media-box__title" id="payment_card_name" style="color:#999999"></h4>
                     <p class="weui-media-box__desc">银行卡号:<span id="payment_card_number"></span></p>
                 </div>
-            </a>
+            </div>
           </div>
           <div class="weui-cell__ft" style="font-size: 0"></div>  
       </div>
+      </a>
     </div>
     <div class="page__bd page__bd_spacing" style="margin:150px auto 0;">
         <a href="javascript:;" id="next-to-add-payment" class="weui-btn weui-btn_primary js_item nextbutton" data-id="addpayment">添加付款方式</a>
@@ -659,7 +666,7 @@
             </div>
          </div>
     </div>
-    <div class="page__bd page__bd_spacing" style="margin:50px auto 0;">
+    <div class="page__bd page__bd_spacing" style="margin:20px auto 0;">
         <a href="javascript:;" id="next-to-add-payment" class="weui-btn weui-btn_primary js_item nextbutton" data-id="paysuccess">确认付款</a>
     </div>
     <div class="page__ft">
@@ -684,6 +691,7 @@
             var id = $(this).data('id');
             setTimeout(function(){
                 window.pageManager.go(id);
+                $('#order_indicator').html(1);
                 $('#order_indicator').show();
             },2100);
         });
@@ -720,7 +728,7 @@
                 <a href="javascript:history.back();" class="weui-btn weui-btn_primary">确认</a>
             </p>
         </div>
-        <div class="weui-msg__extra-area">
+        <div class="weui-msg__extra-area" style="bottom:50px;">
             <div class="weui-footer">
                 <p class="weui-footer__links">
                     <a href="javascript:void(0);" class="weui-footer__link">LineMone快汇</a>
@@ -730,34 +738,76 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function(){
+        var winH = $(window).height();
+
+        $('.js_item').on('click', function(){
+            if($(this).hasClass("weui-btn_disabled")){
+               return false;
+            }
+            var id = $(this).data('id');
+            setTimeout(function(){
+                window.pageManager.go(id);
+                $('#order_indicator').html(1);
+                $('#order_indicator').show();
+                $('#neworder').show();
+            },2100);
+        });
+    });
+</script>
 </script>
 
- <script type="text/html" id="tpl_myorder">
+<script type="text/html" id="tpl_myorder">
 <div class="page">
     <div style="background:#2ab350;text-align:center;">
         <img src="./images/logo.png" alt="LineMoney" style="width:150px;margin:15px;"/>
     </div>
-    <div class="weui-msg">
-        <div class="weui-msg__icon-area"><i class="weui-icon-success weui-icon_msg"></i></div>
-        <div class="weui-msg__text-area">
-            <h2 class="weui-msg__title">操作成功</h2>
-            <p class="weui-msg__desc">感谢您使用LineMoney汇款服务，您的汇款会马上到账，谢谢您的支持！更多服务请访问<a href="javascript:void(0);">LineMoney官方网站</a></p>
-        </div>
-        <div class="weui-msg__opr-area">
-            <p class="weui-btn-area">
-                <a href="javascript:history.back();" class="weui-btn weui-btn_primary">确认</a>
-            </p>
-        </div>
-        <div class="weui-msg__extra-area">
-            <div class="weui-footer">
-                <p class="weui-footer__links">
-                    <a href="javascript:void(0);" class="weui-footer__link">LineMone快汇</a>
-                </p>
-                <p class="weui-footer__text">Copyright &copy; 2017 LineMoney</p>
+        <div class="page__bd">
+        <br>
+        <div id="neworder" class="weui-form-preview" style="display:none;">
+            <div class="weui-form-preview__hd">
+                <label class="weui-form-preview__label">付款金额</label>
+                <em class="weui-form-preview__value">¥2400.00</em>
+            </div>
+            <div class="weui-form-preview__bd">
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">商品</label>
+                    <span class="weui-form-preview__value">电动打蛋机</span>
+                </div>
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">标题标题</label>
+                    <span class="weui-form-preview__value">名字名字名字</span>
+                </div>
+            </div>
+            <div class="weui-form-preview__ft">
+                <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
             </div>
         </div>
     </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
 </div>
+<script type="text/javascript">
+    $(function(){
+        var winH = $(window).height();
+
+        $('.js_item').on('click', function(){
+            if($(this).hasClass("weui-btn_disabled")){
+               return false;
+            }
+            var id = $(this).data('id');
+            setTimeout(function(){
+                window.pageManager.go(id);
+            },2100);
+        });
+
+        if($('#order_indicator').html()==1){
+            $('#neworder').show();
+        }
+    });
+</script>
 </script>
 
 </body>
